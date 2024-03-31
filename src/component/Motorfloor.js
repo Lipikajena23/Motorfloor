@@ -1,39 +1,58 @@
 import React, { useState } from 'react'
 import BrandCard from './BrandCard';
-import VehicleSection from './VehicleSection';
+
 import TabList from './TabList'
 import TruckList from './TruckList'
+import BusList from './BusList';
+import AutoList from './AutoList';
+//import AutoBrand from './AutoBrand';
 
 export default function Motorfloor() {
   const [data,setData] = useState(false);
   
 
-
-  const truckBrands = [
-    { name: 'Ashok Leyland', imageUrl: 'https://motorfloor.com/assets/img/hero/truck-brands/ashok-leyland.jpg', link: 'https://motorfloor.com/trucks/ashok-leyland' },
-    { name: 'Bharat Benz', imageUrl: 'https://motorfloor.com/assets/img/hero/truck-brands/bharat-benz.jpg', link: 'https://motorfloor.com/trucks/bharat-benz' },
-    // Add more truck brands as needed
-  ];
-
+  
   const tractorBrands = [
-    { name: 'Ashok Leyland', imageUrl: 'https://motorfloor.com/assets/img/hero/truck-brands/ashok-leyland.jpg', link: 'https://motorfloor.com/trucks/ashok-leyland' },
-    { name: 'Bharat Benz', imageUrl: 'https://motorfloor.com/assets/img/hero/truck-brands/bharat-benz.jpg', link: 'https://motorfloor.com/trucks/bharat-benz' },
-    
+    { name: "Mahindra", imageUrl: "https://motorfloor.com/assets/img/hero/tractor-brands/mahindra.jpg", link: "https://motorfloor.com/tractors/mahindra" },
+  { name: "John Deere", imageUrl: "https://motorfloor.com/assets/img/hero/tractor-brands/john-deere.jpg", link: "https://motorfloor.com/tractors/john-deere" },
+  { name: "New Holland", imageUrl: "https://motorfloor.com/assets/img/hero/tractor-brands/new-holland.jpg", link: "https://motorfloor.com/tractors/new-holland" },
+  { name: "VST", imageUrl: "https://motorfloor.com/assets/img/hero/tractor-brands/vst.jpg", link: "https://motorfloor.com/tractors/vst" },
+  { name: "ACE", imageUrl: "https://motorfloor.com/assets/img/hero/tractor-brands/ace.jpg", link: "https://motorfloor.com/tractors/ace" },
+  { name: "Eicher", imageUrl: "https://motorfloor.com/assets/img/hero/tractor-brands/eicher.jpg", link: "https://motorfloor.com/tractors/eicher" },
+  { name: "FARMTRAC", imageUrl: "https://motorfloor.com/assets/img/hero/tractor-brands/farmtrac.jpg", link: "https://motorfloor.com/tractors/farmtrac" },
+  { name: "Force Motors", imageUrl: "https://motorfloor.com/assets/img/hero/tractor-brands/force.jpg", link: "https://motorfloor.com/tractors/force" },
+  { name: "Indo Farm", imageUrl: "https://motorfloor.com/assets/img/hero/tractor-brands/indo-farm.jpg", link: "https://motorfloor.com/tractors/indo-farm" },
+  { name: "KARTAR", imageUrl: "https://motorfloor.com/assets/img/hero/tractor-brands/kartar.jpg", link: "https://motorfloor.com/tractors/kartar" },
+  { name: "Kubota", imageUrl: "https://motorfloor.com/assets/img/hero/tractor-brands/kubota.jpg", link: "https://motorfloor.com/tractors/kubota" },
+  { name: "POWERTRAC", imageUrl: "https://motorfloor.com/assets/img/hero/tractor-brands/powertrac.jpg", link: "https://motorfloor.com/tractors/powertrac" },
+  { name: "SONALIKA", imageUrl: "https://motorfloor.com/assets/img/hero/tractor-brands/sonalika.jpg", link: "https://motorfloor.com/tractors/sonalika" },
+  { name: "SWARAJ", imageUrl: "https://motorfloor.com/assets/img/hero/tractor-brands/swaraj.jpg", link: "https://motorfloor.com/tractors/swaraj" },
+  { name: "Massey Ferguson", imageUrl: "https://motorfloor.com/assets/img/hero/tractor-brands/massey-ferguson.jpg", link: "https://motorfloor.com/tractors/massey-ferguson" },
+  { name: "Autonxt Automation", imageUrl: "https://motorfloor.com/assets/img/hero/tractor-brands/autonxt-automation.jpg", link: "https://motorfloor.com/tractors/autonxt-automation" },
+  { name: "CAPTAIN", imageUrl: "https://motorfloor.com/assets/img/hero/tractor-brands/captain.jpg", link: "https://motorfloor.com/tractors/captain" },
+  { name: "Cellestial eMobility", imageUrl: "https://motorfloor.com/assets/img/hero/tractor-brands/cellestial-emobility.jpg", link: "https://motorfloor.com/tractors/cellestial-emobility" },
+  { name: "DigiTrac", imageUrl: "https://motorfloor.com/assets/img/hero/tractor-brands/digitrac.jpg", link: "https://motorfloor.com/tractors/digitrac" },
+  { name: "Escorts Kubota", imageUrl: "https://motorfloor.com/assets/img/hero/tractor-brands/escorts-kubota.jpg", link: "https://motorfloor.com/tractors/escorts-kubota" },
+  { name: "HAV", imageUrl: "https://motorfloor.com/assets/img/hero/tractor-brands/hav.jpg", link: "https://motorfloor.com/tractors/hav" },
+  { name: "HINDUSTAN", imageUrl: "https://motorfloor.com/assets/img/hero/tractor-brands/hindustan.jpg", link: "https://motorfloor.com/tractors/hindustan" },
+  { name: "Preet", imageUrl: "https://motorfloor.com/assets/img/hero/tractor-brands/preet.jpg", link: "https://motorfloor.com/tractors/preet" },
+  { name: "Same Deutz-Fahr", imageUrl: "https://motorfloor.com/assets/img/hero/tractor-brands/same-deutz-fahr.jpg", link: "https://motorfloor.com/tractors/same-deutz-fahr" },
+  { name: "Solis", imageUrl: "https://motorfloor.com/assets/img/hero/tractor-brands/solis.jpg", link: "https://motorfloor.com/tractors/solis" },
+  { name: "Standard", imageUrl: "https://motorfloor.com/assets/img/hero/tractor-brands/standard.jpg", link: "https://motorfloor.com/tractors/standard" },
+  { name: "Trakstar", imageUrl: "https://motorfloor.com/assets/img/hero/tractor-brands/trakstar.jpg", link: "https://motorfloor.com/tractors/trakstar" },
+  { name: "Valdo", imageUrl: "https://motorfloor.com/assets/img/hero/tractor-brands/valdo-tractors.jpg", link: "https://motorfloor.com/tractors/valdo-tractors" }
   ];
 
-  // const tabs = [
-  //   { label: 'Trucks', target: '#tractor1', slug: 'new', name: 'Trucks', id: 'tractor1' },
-  //   { label: 'Mini Trucks', target: '#tractor2', slug: 'Mini', name: 'Mini Trucks', id: 'tractor2' },
-  //   { label: 'Pickup Trucks', target: '#tractor3', slug: 'Pickup', name: 'Pickup Trucks', id: 'tractor3' },
-  //   { label: 'Dumpers', target: '#tractor4', slug: 'dumpers', name: 'Dumpers', id: 'tractor4' },
-  //   { label: 'AC Cabin Tractors', target: '#tractor5', slug: 'ac-cabin', name: 'AC Cabin Tractors', id: 'tractor5' }
-  // ];
+  const truckBrands = [{"name":"Ashok Leyland","imageUrl":"https://motorfloor.com/assets/img/hero/truck-brands/ashok-leyland.jpg","link":"https://motorfloor.com/trucks/ashok-leyland"},{"name":"Bharat Benz","imageUrl":"https://motorfloor.com/assets/img/hero/truck-brands/bharat-benz.jpg","link":"https://motorfloor.com/trucks/bharat-benz"},{"name":"Eicher Motors","imageUrl":"https://motorfloor.com/assets/img/hero/truck-brands/eicher.jpg","link":"https://motorfloor.com/trucks/eicher"},{"name":"Force Motors","imageUrl":"https://motorfloor.com/assets/img/hero/truck-brands/force.jpg","link":"https://motorfloor.com/trucks/force"},{"name":"Hino Motors","imageUrl":"https://motorfloor.com/assets/img/hero/truck-brands/hino.jpg","link":"https://motorfloor.com/trucks/hino"},{"name":"Isuzu","imageUrl":"https://motorfloor.com/assets/img/hero/truck-brands/isuzu.jpg","link":"https://motorfloor.com/trucks/isuzu"},{"name":"Kamaz","imageUrl":"https://motorfloor.com/assets/img/hero/truck-brands/kamaz.jpg","link":"https://motorfloor.com/trucks/kamaz"},{"name":"Mahindra","imageUrl":"https://motorfloor.com/assets/img/hero/truck-brands/mahindra.jpg","link":"https://motorfloor.com/trucks/mahindra"},{"name":"MAN","imageUrl":"https://motorfloor.com/assets/img/hero/truck-brands/man.jpg","link":"https://motorfloor.com/trucks/man"},{"name":"Maruti Suzuki","imageUrl":"https://motorfloor.com/assets/img/hero/truck-brands/maruti-suzuki.jpg","link":"https://motorfloor.com/trucks/maruti-suzuki"},{"name":"Olectra","imageUrl":"https://motorfloor.com/assets/img/hero/truck-brands/olectra.jpg","link":"https://motorfloor.com/trucks/olectra"},{"name":"Omega Seiki Mobility","imageUrl":"https://motorfloor.com/assets/img/hero/truck-brands/omega.jpg","link":"https://motorfloor.com/trucks/omega"},{"name":"Premier Motors","imageUrl":"https://motorfloor.com/assets/img/hero/truck-brands/premier.jpg","link":"https://motorfloor.com/trucks/premier"},{"name":"SCANIA","imageUrl":"https://motorfloor.com/assets/img/hero/truck-brands/scania.jpg","link":"https://motorfloor.com/trucks/scania"},{"name":"SML Isuzu","imageUrl":"https://motorfloor.com/assets/img/hero/truck-brands/sml-isuzu.jpg","link":"https://motorfloor.com/trucks/sml-isuzu"},{"name":"Swaraj Mazda","imageUrl":"https://motorfloor.com/assets/img/hero/truck-brands/swaraj-mazda.jpg","link":"https://motorfloor.com/trucks/swaraj-mazda"},{"name":"TATA","imageUrl":"https://motorfloor.com/assets/img/hero/truck-brands/tata.jpg","link":"https://motorfloor.com/trucks/tata"},{"name":"VOLVO","imageUrl":"https://motorfloor.com/assets/img/hero/truck-brands/volvo.jpg","link":"https://motorfloor.com/trucks/volvo"}]
+
+  const busBrands = [{"name":"Ashok Leyland","imageUrl":"https://motorfloor.com/assets/img/hero/bus-brands/ashok-leyland.jpg","link":"https://motorfloor.com/buses/ashok-leyland"},{"name":"Bharat Benz","imageUrl":"https://motorfloor.com/assets/img/hero/bus-brands/bharat-benz.jpg","link":"https://motorfloor.com/buses/bharat-benz"},{"name":"Eicher Motors","imageUrl":"https://motorfloor.com/assets/img/hero/bus-brands/eicher.jpg","link":"https://motorfloor.com/buses/eicher"},{"name":"EKA Mobility","imageUrl":"https://motorfloor.com/assets/img/hero/bus-brands/eka.jpg","link":"https://motorfloor.com/buses/eka"},{"name":"Force Motors","imageUrl":"https://motorfloor.com/assets/img/hero/bus-brands/force.jpg","link":"https://motorfloor.com/buses/force"},{"name":"JBM","imageUrl":"https://motorfloor.com/assets/img/hero/bus-brands/jbm.jpg","link":"https://motorfloor.com/buses/jbm"},{"name":"Mahindra","imageUrl":"https://motorfloor.com/assets/img/hero/bus-brands/mahindra.jpg","link":"https://motorfloor.com/buses/mahindra"},{"name":"Mercedes","imageUrl":"https://motorfloor.com/assets/img/hero/bus-brands/mercedes.jpg","link":"https://motorfloor.com/buses/mercedes"},{"name":"Olectra","imageUrl":"https://motorfloor.com/assets/img/hero/bus-brands/olectra.jpg","link":"https://motorfloor.com/buses/olectra"},{"name":"Reep Motors","imageUrl":"https://motorfloor.com/assets/img/hero/bus-brands/reep-motors.jpg","link":"https://motorfloor.com/buses/reep-motors"},{"name":"Scania","imageUrl":"https://motorfloor.com/assets/img/hero/bus-brands/scania.jpg","link":"https://motorfloor.com/buses/scania"},{"name":"SML Isuzu","imageUrl":"https://motorfloor.com/assets/img/hero/bus-brands/sml-isuzu.jpg","link":"https://motorfloor.com/buses/sml-isuzu"},{"name":"Speedways Electric","imageUrl":"https://motorfloor.com/assets/img/hero/bus-brands/speedways-electric.jpg","link":"https://motorfloor.com/buses/speedways-electric"},{"name":"Switch Mobility","imageUrl":"https://motorfloor.com/assets/img/hero/bus-brands/switch-mobility.jpg","link":"https://motorfloor.com/buses/switch-mobility"},{"name":"TATA Motors","imageUrl":"https://motorfloor.com/assets/img/hero/bus-brands/tata.jpg","link":"https://motorfloor.com/buses/tata"},{"name":"VOLVO","imageUrl":"https://motorfloor.com/assets/img/hero/bus-brands/volvo.jpg","link":"https://motorfloor.com/buses/volvo"}]
+
 
   
   const tabs = [
     { label: 'Tractors', target: '#tractor1', slug: 'new',  id: 'tractor1' },
-    { label: '2WD Tractors', target: '#tractor2', slug: '2wd', name: '2WD Tractors', id: 'tractor2' },
-    { label: '4WD Tractors', target: '#tractor3', slug: '', name: '4WD Tractors', id: 'tractor3' },
+    { label: '2WD Tractors', target: '#tractor2', slug: '2WD', name: '2WD Tractors', id: 'tractor2' },
+    { label: '4WD Tractors', target: '#tractor3', slug: '4WD', name: '4WD Tractors', id: 'tractor3' },
     { label: 'Electric Tractors', target: '#tractor4', slug: 'electric', name: 'Electric Tractors', id: 'tractor4' },
     { label: 'AC Cabin Tractors', target: '#tractor5', slug: 'ac-cabin', name: 'AC Cabin Tractors', id: 'tractor5' },
   ];
@@ -52,78 +71,210 @@ export default function Motorfloor() {
     { label: 'BS-VI Trucks', target: '#truck7', slug: 'BS-VI', name: 'AC Cabin Tractors', id: 'truck7' }
 ];
 
+const buses = [
+  { label: 'Buses', target: '#Bus1', slug: 'Buses', name: 'Tractors', id: 'Bus1' },
+  { label: 'Passenger Buses', target: '#Bus2', slug: 'Passenger', name: '2WD Tractors', id: 'Bus2' },
+  { label: 'School Buses', target: '#Bus3', slug: 'School', name: '4WD Tractors', id: 'Bus3' },
+  { label: 'Staff Buses', target: '#Bus4', slug: 'Staff', name: 'Electric Tractors', id: 'Bus4' },
+  { label: 'Electric Buses', target: '#Bus5', slug: 'Electric', name: 'AC Cabin Tractors', id: 'Bus5' },
+  { label: 'Tourist Buses', target: '#Bus6', slug: 'Tourist', name: 'AC Cabin Tractors', id: 'Bus6' }, // Add comma here
+ 
+];
+
+const autos = [
+  { label: '3-Wheelers',
+   target: '#auto1', slug: '3-Wheelers', name: 'Tractors', id: 'auto1' },
+  { label: 'Passenger Auto', target: '#auto2', slug: 'Passenger', name: '2WD Tractors', id: 'auto2' },
+  { label: 'Cargo Auto', target: '#auto3', slug: 'Cargo', name: '4WD Tractors', id: 'auto3' },
+  
+  { label: 'Electric Auto', target: '#auto5', slug: 'Electric', name: 'AC Cabin Tractors', id: 'auto4' },
+  { label: 'CNG Auto', target: '#auto6', slug: 'CNG', name: 'AC Cabin Tractors', id: 'auto5' }, // Add comma here
+ 
+];
+
 
   
-  // const TractorDataArray = [
-  //   {
-  //     key: "tractor1",
-  //     name: "Mahindra 575 DI XP Plus",
-  //     imageUrl: "https://motorfloor.com/assets/admin/img/tractor/mahindra-575-di-xp-plus.jpg",
-  //     detailsUrl: "https://motorfloor.com/tractors/details/mahindra/575-di-xp-plus",
-  //     price: "6.9",
-  //   },
-  //   { 
-  //     key: "tractor1",
-  //     name: "Sonalika DI 745 III Sikander",
-  //     imageUrl: "https://motorfloor.com/assets/admin/img/tractor/sonalika-di-745-iii-sikander.jpg",
-  //     detailsUrl: "https://motorfloor.com/tractors/details/sonalika/di-745-iii-sikander",
-  //     price: "6.43",
-  //   },
-  //   { 
-  //     key: "tractor1",
-  //     name: "Farmtrac 60 PowerMaxx 4WD",
-  //     imageUrl: "https://motorfloor.com/assets/admin/img/tractor/farmtrac-60-powermaxx-4wd.jpg",
-  //     detailsUrl: "https://motorfloor.com/tractors/details/farmtrac/60-powermaxx-4wd",
-  //     price: "9.74",
-  //   },
-  //   {
-  //     key: "tractor1",
-  //     name: "Mahindra 275 DI XP Plus",
-  //     imageUrl: "https://motorfloor.com/assets/admin/img/tractor/mahindra-275-di-xp-plus.jpg",
-  //     detailsUrl: "https://motorfloor.com/tractors/details/mahindra/275-di-xp-plus",
-  //     price: "5.65",
-  //   },
-  //   {
-  //     key: "tractor1",
-  //     name: "Massey Ferguson 241 DI DYNATRACK",
-  //     imageUrl: "https://motorfloor.com/assets/admin/img/tractor/massey-ferguson-241-di-dynatrack.jpg",
-  //     detailsUrl: "https://motorfloor.com/tractors/details/massey-ferguson/241-di-dynatrack",
-  //     price: "7.43",
-  //   },
-  //   { 
-  //     key: "tractor2",
-  //     name: "Farmtrac 60 PowerMaxx 4WD",
-  //     imageUrl: "https://motorfloor.com/assets/admin/img/tractor/farmtrac-60-powermaxx-4wd.jpg",
-  //     detailsUrl: "https://motorfloor.com/tractors/details/farmtrac/60-powermaxx-4wd",
-  //     price: "9.74",
-  //   },
-  //   // Add more tractor objects here...
-  // ];
-
   const TractorDataArray = [
     {
-      key: "new", // Corresponding to the 'new' tab slug
+      key: "new",
       name: "Mahindra 575 DI XP Plus",
       imageUrl: "https://motorfloor.com/assets/admin/img/tractor/mahindra-575-di-xp-plus.jpg",
       detailsUrl: "https://motorfloor.com/tractors/details/mahindra/575-di-xp-plus",
       price: "6.9",
     },
     { 
-      key: "new", // Corresponding to the 'new' tab slug
+      key: "new",
       name: "Sonalika DI 745 III Sikander",
       imageUrl: "https://motorfloor.com/assets/admin/img/tractor/sonalika-di-745-iii-sikander.jpg",
       detailsUrl: "https://motorfloor.com/tractors/details/sonalika/di-745-iii-sikander",
       price: "6.43",
     },
     { 
-      key: "2wd", // Corresponding to the '2wd' tab slug
+      key: "new",
       name: "Farmtrac 60 PowerMaxx 4WD",
       imageUrl: "https://motorfloor.com/assets/admin/img/tractor/farmtrac-60-powermaxx-4wd.jpg",
       detailsUrl: "https://motorfloor.com/tractors/details/farmtrac/60-powermaxx-4wd",
       price: "9.74",
     },
+    {
+      key: "new",
+      name: "Mahindra 275 DI XP Plus",
+      imageUrl: "https://motorfloor.com/assets/admin/img/tractor/mahindra-275-di-xp-plus.jpg",
+      detailsUrl: "https://motorfloor.com/tractors/details/mahindra/275-di-xp-plus",
+      price: "5.65",
+    },
+    {
+      key: "new",
+      name: "Massey Ferguson 241 DI DYNATRACK",
+      imageUrl: "https://motorfloor.com/assets/admin/img/tractor/massey-ferguson-241-di-dynatrack.jpg",
+      detailsUrl: "https://motorfloor.com/tractors/details/massey-ferguson/241-di-dynatrack",
+      price: "7.43",
+    },
+    {
+      key: "2WD",
+      name: "Mahindra 275 DI TU",
+      imageUrl: "https://motorfloor.com/assets/admin/img/tractor/mahindra-275-di-tu.jpg",
+      detailsUrl: "https://motorfloor.com/tractors/details/mahindra/275-di-tu",
+      price: "5.75",
+    },
+    {
+      key: "2WD",
+      name: "Swaraj 717",
+      imageUrl: "https://motorfloor.com/assets/admin/img/tractor/swaraj-717.jpg",
+      detailsUrl: "https://motorfloor.com/tractors/details/swaraj/717",
+      price: "3.2",
+    },
+    {
+      key: "2WD",
+      name: "Kubota MU4501 2WD",
+      imageUrl: "https://motorfloor.com/assets/admin/img/tractor/kubota-mu4501-2wd.jpg",
+      detailsUrl: "https://motorfloor.com/tractors/details/kubota/mu4501-2wd",
+      price: "8.3",
+    },
+    {
+      key: "2WD",
+      name: "Sonalika DI 35",
+      imageUrl: "https://motorfloor.com/assets/admin/img/tractor/sonalika-di-35.jpg",
+      detailsUrl: "https://motorfloor.com/tractors/details/sonalika/di-35",
+      price: "5.28",
+    },
+    {
+      key: "2WD",
+      name: "Mahindra Arjun Novo 605 Di-i 2WD",
+      imageUrl: "https://motorfloor.com/assets/admin/img/tractor/mahindra-arjun-novo-605-di-i-2wd.jpg",
+      detailsUrl: "https://motorfloor.com/tractors/details/mahindra/arjun-novo-605-di-i-2wd",
+      price: "8.75",
+    },
+    {
+      key: "4WD",
+      name: "Mahindra JIVO 365 DI 4WD",
+      imageUrl: "https://motorfloor.com/assets/admin/img/tractor/mahindra-jivo-365-di-4wd.jpg",
+      detailsUrl: "https://motorfloor.com/tractors/details/mahindra/jivo-365-di-4wd",
+      price: "5.9",
+    },
+    {
+      key: "4WD",
+      name: "John Deere 5310 4WD",
+      imageUrl: "https://motorfloor.com/assets/admin/img/tractor/john-deere-5310-4wd.jpg",
+      detailsUrl: "https://motorfloor.com/tractors/details/john-deere/5310-4wd",
+      price: "10.99",
+    },
+    {
+      key: "4WD",
+      name: "Sonalika DI 60 RX- 4WD",
+      imageUrl: "https://motorfloor.com/assets/admin/img/tractor/sonalika-di-60-rx-4wd.jpg",
+      detailsUrl: "https://motorfloor.com/tractors/details/sonalika/di-60-rx-4wd",
+      price: "10.42",
+    },
+    {
+      key: "4WD",
+      name: "New Holland 3630 TX Plus+",
+      imageUrl: "https://motorfloor.com/assets/admin/img/tractor/new-holland-3630-tx-plus.jpg",
+      detailsUrl: "https://motorfloor.com/tractors/details/new-holland/3630-tx-plus",
+      price: "8",
+    },
+    {
+      key: "4WD",
+      name: "Swaraj 855 FE 4WD",
+      imageUrl: "https://motorfloor.com/assets/admin/img/tractor/swaraj-855-fe-4wd.jpg",
+      detailsUrl: "https://motorfloor.com/tractors/details/swaraj/855-fe-4wd",
+      price: "9.3",
+    },
+    {
+      key: "electric",
+      name: "Sonalika Tiger Electric",
+      imageUrl: "https://motorfloor.com/assets/admin/img/tractor/sonalika-tiger-electric.jpg",
+      detailsUrl: "https://motorfloor.com/tractors/details/sonalika/tiger-electric",
+      price: "From ₹ 5.91 Lakh*"
+    },
+    {
+      key: "electric",
+      name: "Autonxt X45H2",
+      imageUrl: "https://motorfloor.com/assets/admin/img/tractor/autonxt-x45h2.jpg",
+      detailsUrl: "https://motorfloor.com/tractors/details/autonxt-automation/x45h2",
+      price: "Coming Soon"
+    },
+    {
+      key: "electric",
+      name: "HAV 45 S1",
+      imageUrl: "https://motorfloor.com/assets/admin/img/tractor/hav-45-s1.jpg",
+      detailsUrl: "https://motorfloor.com/tractors/details/hav/45-s1",
+      price: "From ₹ 8.49 Lakh*"
+    },
+    {
+      key: "electric",
+      name: "Cellestial 55 HP",
+      imageUrl: "https://motorfloor.com/assets/admin/img/tractor/cellestial-55-hp.jpg",
+      detailsUrl: "https://motorfloor.com/tractors/details/cellestial-emobility/55-hp",
+      price: "Coming Soon"
+    },
+    {
+      key: "electric",
+      name: "HAV 50 S1",
+      imageUrl: "https://motorfloor.com/assets/admin/img/tractor/hav-50-s1.jpg",
+      detailsUrl: "https://motorfloor.com/tractors/details/hav/50-s1",
+      price: "From ₹ 9.99 Lakh*"
+    },
+    {
+      key: "ac-cabin",
+      name: "New Holland TD 5.90",
+      imageUrl: "https://motorfloor.com/assets/admin/img/tractor/new-holland-td-5.90.jpg",
+      detailsUrl: "https://motorfloor.com/tractors/details/new-holland/td-5.90",
+      price: "From ₹ 26.1 Lakh*"
+    },
+    {
+      key: "ac-cabin",
+      name: "Sonalika Worldtrac 90",
+      imageUrl: "https://motorfloor.com/assets/admin/img/tractor/sonalika-worldtrac-90.jpg",
+      detailsUrl: "https://motorfloor.com/tractors/details/sonalika/worldtrac-90",
+      price: "From ₹ 13.99 Lakh*"
+    },
+    {
+      key: "ac-cabin",
+      name: "John Deere 5060 E - 2WD AC Cabin",
+      imageUrl: "https://motorfloor.com/assets/admin/img/tractor/john-deere-5060-e-2wd-ac-cabin.jpg",
+      detailsUrl: "https://motorfloor.com/tractors/details/john-deere/5060-e-2wd-ac-cabin",
+      price: "From ₹ 15.6 Lakh*"
+    },
+    {
+      key: "ac-cabin",
+      name: "Preet 9049 AC - 4WD",
+      imageUrl: "https://motorfloor.com/assets/admin/img/tractor/preet-9049-ac-4wd.jpg",
+      detailsUrl: "https://motorfloor.com/tractors/details/preet/9049-ac-4wd",
+      price: "From ₹ 21.2 Lakh*"
+    },
+    {
+      key: "ac-cabin",
+      name: "John Deere 6120 B",
+      imageUrl: "https://motorfloor.com/assets/admin/img/tractor/john-deere-6120-b.jpg",
+      detailsUrl: "https://motorfloor.com/tractors/details/john-deere/6120-b",
+      price: "From ₹ 32.5 Lakh*"
+    }
+
+    
     // Add more tractor objects here...
   ];
+
   
 
   const TruckDataArray = [
@@ -142,60 +293,633 @@ export default function Motorfloor() {
       price: "37.8",
     },
     {
-      key:"Mini",
+      key:"Trucks",
       name: "Eicher Pro 2114XP",
       imageUrl: "https://motorfloor.com/assets/admin/img/truck/eicher-pro-2114xp.jpg",
       detailsUrl: "https://motorfloor.com/trucks/details/eicher/pro-2114xp",
       price: "23.11",
     },
     {
+      key:"Trucks",
       name: "Tata LPT 4825",
       imageUrl: "https://motorfloor.com/assets/admin/img/truck/tata-lpt-4825.jpg",
       detailsUrl: "https://motorfloor.com/trucks/details/tata/lpt-4825",
       price: "44.43",
     },
     {
+      key:"Trucks",
       name: "Mahindra Blazo X 55 Trailer",
       imageUrl: "https://motorfloor.com/assets/admin/img/truck/mahindra-blazo-x-55-trailer.jpg",
       detailsUrl: "https://motorfloor.com/trucks/details/mahindra/blazo-x-55-trailer",
       price: "41.44",
     },
+    {
+      key:"Mini",
+      name: "Ashok Leyland Dost+",
+      imageUrl: "https://motorfloor.com/assets/admin/img/truck/ashok-leyland-dost-plus.jpg",
+      detailsUrl: "https://motorfloor.com/trucks/details/ashok-leyland/dost-plus",
+      price: "From ₹ 7.75 Lakh*"
+    },
+    {
+      key:"Mini",
+      name: "Mahindra Bolero Camper 4WD",
+      imageUrl: "https://motorfloor.com/assets/admin/img/truck/mahindra-bolero-camper-4wd.jpg",
+      detailsUrl: "https://motorfloor.com/trucks/details/mahindra/bolero-camper-4wd",
+      price: "From ₹ 9.27 Lakh*"
+    },
+    {
+      key:"Mini",
+      name: "Tata Yodha Pickup",
+      imageUrl: "https://motorfloor.com/assets/admin/img/truck/tata-yodha-pickup.jpg",
+      detailsUrl: "https://motorfloor.com/trucks/details/tata/yodha-pickup",
+      price: "From ₹ 9.66 Lakh*"
+    },
+    {
+      key:"Mini",
+      name: "Eicher Pro 2049",
+      imageUrl: "https://motorfloor.com/assets/admin/img/truck/eicher-pro-2049.jpg",
+      detailsUrl: "https://motorfloor.com/trucks/details/eicher/pro-2049",
+      price: "From ₹ 10.27 Lakh*"
+    },
+    {
+      key:"Mini",
+      name: "Force Kargo King",
+      imageUrl: "https://motorfloor.com/assets/admin/img/truck/force-kargo-king.jpg",
+      detailsUrl: "https://motorfloor.com/trucks/details/force/kargo-king",
+      price: "From ₹ 6.49 Lakh*"
+    },
+    {
+      key:"Pickup",
+      name: "Mahindra Bolero Pikup 1.7T",
+      imageUrl: "https://motorfloor.com/assets/admin/img/truck/mahindra-bolero-pikup-17t.jpg",
+      detailsUrl: "https://motorfloor.com/trucks/details/mahindra/bolero-pikup-17t",
+      price: "From ₹ 9.02 Lakh*"
+    },
+    {
+      key:"Pickup",
+      name: "Mahindra Imperio",
+      imageUrl: "https://motorfloor.com/assets/admin/img/truck/mahindra-imperio.jpg",
+      detailsUrl: "https://motorfloor.com/trucks/details/mahindra/imperio",
+      price: "From ₹ 7.32 Lakh*"
+    },
+    {
+      key:"Pickup",
+      name: "Mahindra Supro Profit Truck Maxi",
+      imageUrl: "https://motorfloor.com/assets/admin/img/truck/mahindra-supro-profit-truck-maxi.jpg",
+      detailsUrl: "https://motorfloor.com/trucks/details/mahindra/supro-profit-truck-maxi",
+      price: "From ₹ 6.84 Lakh*"
+    },
+    {
+      key:"Pickup",
+      name: "Mahindra Supro CNG",
+      imageUrl: "https://motorfloor.com/assets/admin/img/truck/mahindra-supro-cng.jpg",
+      detailsUrl: "https://motorfloor.com/trucks/details/mahindra/supro-cng",
+      price: "From ₹ 5.76 Lakh*"
+    },
+    {
+      key:"Pickup",
+      name: "Tata Ace HT Plus",
+      imageUrl: "https://motorfloor.com/assets/admin/img/truck/tata-ace-ht-plus.jpg",
+      detailsUrl: "https://motorfloor.com/trucks/details/tata/ace-ht-plus",
+      price: "From ₹ 6.69 Lakh*"
+    },
+    {
+      key:"Dumpers",
+      name: "Bharat Benz 1217C",
+      imageUrl: "https://motorfloor.com/assets/admin/img/truck/bharat-benz-1217c.jpg",
+      detailsUrl: "https://motorfloor.com/trucks/details/bharat-benz/1217c",
+      price: "From ₹ 20.61 Lakh*"
+    },
+    {
+      key:"Dumpers",
+      name: "Eicher Pro 8035XM",
+      imageUrl: "https://motorfloor.com/assets/admin/img/truck/eicher-pro-8035xm.jpg",
+      detailsUrl: "https://motorfloor.com/trucks/details/eicher/pro-8035xm",
+      price: "From ₹ 71.3 Lakh*"
+    },
+    {
+      key:"Dumpers",
+      name: "Ashok Leyland 2820 Tipper",
+      imageUrl: "https://motorfloor.com/assets/admin/img/truck/ashok-leyland-2820-tipper.jpg",
+      detailsUrl: "https://motorfloor.com/trucks/details/ashok-leyland/2820-tipper",
+      price: "From ₹ 39.55 Lakh*"
+    },
+    {
+      key:"Dumpers",
+      name: "Tata 912 LPK",
+      imageUrl: "https://motorfloor.com/assets/admin/img/truck/tata-912-lpk.jpg",
+      detailsUrl: "https://motorfloor.com/trucks/details/tata/912-lpk",
+      price: "From ₹ 18.64 Lakh*"
+    },
+    {
+      key:"Dumpers",
+      name: "Bharat Benz 1923C",
+      imageUrl: "https://motorfloor.com/assets/admin/img/truck/bharat-benz-1923c.jpg",
+      detailsUrl: "https://motorfloor.com/trucks/details/bharat-benz/1923c",
+      price: "From ₹ 30.87 Lakh*"
+    },
+    {
+      key:"Trailers",
+      name: "Tata Signa 5530.S",
+      imageUrl: "https://motorfloor.com/assets/admin/img/truck/tata-signa-5530s.jpg",
+      detailsUrl: "https://motorfloor.com/trucks/details/tata/signa-5530s",
+      price: "From ₹ 42.6 Lakh*"
+    },
+    {
+      key:"Trailers",
+      name: "Mahindra BLAZO X 46 BS6 Tractor",
+      imageUrl: "https://motorfloor.com/assets/admin/img/truck/mahindra-blazo-x-46-bs6-tractor.jpg",
+      detailsUrl: "https://motorfloor.com/trucks/details/mahindra/blazo-x-46-bs6-tractor",
+      price: "From ₹ 36.19 Lakh*"
+    },
+    {
+      key:"Trailers",
+      name: "Tata Signa 5525.S",
+      imageUrl: "https://motorfloor.com/assets/admin/img/truck/tata-signa-5525s.jpg",
+      detailsUrl: "https://motorfloor.com/trucks/details/tata/signa-5525s",
+      price: "From ₹ 36.75 Lakh*"
+    },
+    {
+      key:"Trailers",
+      name: "Ashok Leyland 5225 -4x2 Tractor",
+      imageUrl: "https://motorfloor.com/assets/admin/img/truck/ashok-leyland-5225-4x2-tractor.jpg",
+      detailsUrl: "https://motorfloor.com/trucks/details/ashok-leyland/5225-4x2-tractor",
+      price: "From ₹ 39.14 Lakh*"
+    },
+    {
+      key:"Trailers",
+      name: "BharatBenz 5528TT",
+      imageUrl: "https://motorfloor.com/assets/admin/img/truck/bharatbenz-5528tt.jpg",
+      detailsUrl: "https://motorfloor.com/trucks/details/bharat-benz/5528tt",
+      price: "From ₹ 44.6 Lakh*"
+    },
+    {
+      key:"CNG",
+      name: "Eicher Pro 2059 CNG",
+      imageUrl: "https://motorfloor.com/assets/admin/img/truck/eicher-pro-2059-cng.jpg",
+      detailsUrl: "https://motorfloor.com/trucks/details/eicher/pro-2059-cng",
+      price: "From ₹ 15.77 Lakh*"
+    },
+    {
+      key:"CNG",
+      name: "Ashok Leyland Dost CNG",
+      imageUrl: "https://motorfloor.com/assets/admin/img/truck/ashok-leyland-dost-cng.jpg",
+      detailsUrl: "https://motorfloor.com/trucks/details/ashok-leyland/dost-cng",
+      price: "From ₹ 7.79 Lakh*"
+    },
+    {
+      key:"CNG",
+      name: "Ashok Leyland Ecomet 1415 HE CNG",
+      imageUrl: "https://motorfloor.com/assets/admin/img/truck/ashok-leyland-ecomet-1415-he-cng.jpg",
+      detailsUrl: "https://motorfloor.com/trucks/details/ashok-leyland/ecomet-1415-he-cng",
+      price: "From ₹ 25.22 Lakh*"
+    },
+    {
+      key:"CNG",
+      name: "Ashok Leyland Ecomet 1615 HE CNG",
+      imageUrl: "https://motorfloor.com/assets/admin/img/truck/ashok-leyland-ecomet-1615-he-cng.jpg",
+      detailsUrl: "https://motorfloor.com/trucks/details/ashok-leyland/ecomet-1615-he-cng",
+      price: "From ₹ 25 Lakh*"
+    },
+    {
+      key:"CNG",
+      name: "Ashok Leyland Ecomet STAR 1115 CNG",
+      imageUrl: "https://motorfloor.com/assets/admin/img/truck/ashok-leyland-ecomet-star-1115-cng.jpg",
+      detailsUrl: "https://motorfloor.com/trucks/details/ashok-leyland/ecomet-star-1115-cng",
+      price: "From ₹ 20 Lakh*"
+    },
+    { 
+      key:"BS-VI ",
+      name: "Ashok Leyland BOSS 1115 Tipper",
+      imageUrl: "https://motorfloor.com/assets/admin/img/truck/ashok-leyland-boss-1115-tipper.jpg",
+      detailsUrl: "https://motorfloor.com/trucks/details/ashok-leyland/boss-1115-tipper",
+      price: "From ₹ 19.11 Lakh*"
+    },
+    {
+      key:"BS-VI ",
+      name: "Ashok Leyland BOSS 1415 HB",
+      imageUrl: "https://motorfloor.com/assets/admin/img/truck/ashok-leyland-boss-1415-hb.jpg",
+      detailsUrl: "https://motorfloor.com/trucks/details/ashok-leyland/boss-1415-hb",
+      price: "From ₹ 21.19 Lakh*"
+    },
+    {
+      key:"BS-VI ",
+      name: "Ashok Leyland Dost Strong",
+      imageUrl: "https://motorfloor.com/assets/admin/img/truck/ashok-leyland-dost-strong.jpg",
+      detailsUrl: "https://motorfloor.com/trucks/details/ashok-leyland/dost-strong",
+      price: "From ₹ 7.49 Lakh*"
+    },
+    {
+      key:"BS-VI ",
+      name: "Ashok Leyland Ecomet 1215 Tipper",
+      imageUrl: "https://motorfloor.com/assets/admin/img/truck/ashok-leyland-ecomet-1215-tipper.jpg",
+      detailsUrl: "https://motorfloor.com/trucks/details/ashok-leyland/ecomet-1215-tipper",
+      price: "From ₹ 20 Lakh*"
+    },
+    {
+      key:"BS-VI ",
+      name: "Ashok Leyland Ecomet 1415 HE",
+      imageUrl: "https://motorfloor.com/assets/admin/img/truck/ashok-leyland-ecomet-1415-he.jpg",
+      detailsUrl: "https://motorfloor.com/trucks/details/ashok-leyland/ecomet-1415-he",
+      price: "From ₹ 20.48 Lakh*"
+    }
     // Add more tractor objects here...
   ];
 
   const BusDataArray = [
     {
+      key:'Buses',
       name: "Tata Ultra Prime LPO 11.6/54: 50 Seater",
       imageUrl: "https://motorfloor.com/assets/admin/img/bus/tata-ultra-prime-lpo-11654-50-seater.jpg",
       detailsUrl: "https://motorfloor.com/buses/details/tata/ultra-prime-lpo-11654-50-seater",
       price: "Coming Soon",
     },
     {
+      key:'Buses',
       name: "SML Isuzu S7 CNG School 5100: 38 / 52 / 59 Seater",
       imageUrl: "https://motorfloor.com/assets/admin/img/bus/sml-isuzu-s7-cng-school-5100-38-52-59-seater.jpg",
       detailsUrl: "https://motorfloor.com/buses/details/sml-isuzu/s7-cng-school-5100-38-52-59-seater",
       price: "22.83",
     },
     {
+      key:'Buses',
       name: "Ashok Leyland Oyster 5200: 38 / 42 Seater",
       imageUrl: "https://motorfloor.com/assets/admin/img/bus/ashok-leyland-oyster-5200-38-42-seater.jpg",
       detailsUrl: "https://motorfloor.com/buses/details/ashok-leyland/oyster-5200-38-42-seater",
       price: "Coming Soon",
     },
     {
+      key:'Buses',
       name: "Force Traveller Royale",
       imageUrl: "https://motorfloor.com/assets/admin/img/bus/force-traveller-royale.jpg",
       detailsUrl: "https://motorfloor.com/buses/details/force/traveller-royale",
       price: "15",
     },
     {
+      key:'Buses',
       name: "Tata Starbus Prime LP 913/52 CNG: 51 Seater",
       imageUrl: "https://motorfloor.com/assets/admin/img/bus/tata-starbus-prime-lp-91352-cng-51-seater.jpg",
       detailsUrl: "https://motorfloor.com/buses/details/tata/starbus-prime-lp-91352-cng-51-seater",
       price: "39.73",
     },
+    {
+      key:"Passenger",
+      name: "Tata LP 407 CNG : Starbus 24 Seater",
+      imageUrl: "https://motorfloor.com/assets/admin/img/bus/tata-lp-407-cng-starbus-24-seater.jpg",
+      detailsUrl: "https://motorfloor.com/buses/details/tata/lp-407-cng-starbus-24-seater",
+      price: "From ₹ 18.01 Lakh*"
+    },
+    {
+      key:"Passenger",
+      name: "Ashok Leyland Cheetah Tourist bus",
+      imageUrl: "https://motorfloor.com/assets/admin/img/bus/ashok-leyland-cheetah-tourist-bus.jpg",
+      detailsUrl: "https://motorfloor.com/buses/details/ashok-leyland/cheetah-tourist-bus",
+      price: "From ₹ 27.19 Lakh*"
+    },
+    {
+      key:"Passenger",
+      name: "BharatBenz 917 AC: Tourist 26 Seater",
+      imageUrl: "https://motorfloor.com/assets/admin/img/bus/bharatbenz-917-ac-tourist-26-seater.jpg",
+      detailsUrl: "https://motorfloor.com/buses/details/bharat-benz/917-ac-tourist-26-seater",
+      price: "From ₹ 30 Lakh*"
+    },
+    {
+      key:"Passenger",
+      name: "Volvo 9400 14.5M",
+      imageUrl: "https://motorfloor.com/assets/admin/img/bus/volvo-9400-145m.jpg",
+      detailsUrl: "https://motorfloor.com/buses/details/volvo/9400-145m",
+      price: "From ₹ 90 Lakh*"
+    },
+    {
+      key:"Passenger",
+      name: "SML Isuzu Executive LX Coach 5100: 25 / 27 / 36 / 38 Seater",
+      imageUrl: "https://motorfloor.com/assets/admin/img/bus/sml-isuzu-executive-lx-coach-5100-25-27-36-38-seater.jpg",
+      detailsUrl: "https://motorfloor.com/buses/details/sml-isuzu/executive-lx-coach-5100-25-27-36-38-seater",
+      price: "From ₹ 22.25 Lakh*"
+    },
+    {
+      key:"School",
+      name: "Tata Cityride School LP 410/36: 35 Seater",
+      imageUrl: "https://motorfloor.com/assets/admin/img/bus/tata-cityride-school-lp-41036-35-seater.jpg",
+      detailsUrl: "https://motorfloor.com/buses/details/tata/cityride-school-lp-41036-35-seater",
+      price: "From ₹ 20.43 Lakh*"
+    },
+    {
+      key:"School",
+      name: "Ashok Leyland Oyster School 4200: 52 Seater",
+      imageUrl: "https://motorfloor.com/assets/admin/img/bus/ashok-leyland-oyster-school-4200-52-seater.jpg",
+      detailsUrl: "https://motorfloor.com/buses/details/ashok-leyland/oyster-school-4200-52-seater",
+      price: "Coming Soon"
+    },
+    {
+      key:"School",
+      name: "Force Traveller School Bus 4020",
+      imageUrl: "https://motorfloor.com/assets/admin/img/bus/force-traveller-school-bus-4020.jpg",
+      detailsUrl: "https://motorfloor.com/buses/details/force/traveller-school-bus-4020",
+      price: "From ₹ 16.42 Lakh*"
+    },
+    {
+      key:"School",
+      name: "Eicher 10.90L CNG : Starline School 40 / 51 Seater",
+      imageUrl: "https://motorfloor.com/assets/admin/img/bus/eicher-1090l-cng-starline-school-40-51-seater.jpg",
+      detailsUrl: "https://motorfloor.com/buses/details/eicher/1090l-cng-starline-school-40-51-seater",
+      price: "From ₹ 17.9 Lakh*"
+    },
+    {
+      key:"School",
+      name: "SML Isuzu S7 CNG School 3335: 22 / 30 / 36 Seater",
+      imageUrl: "https://motorfloor.com/assets/admin/img/bus/sml-isuzu-s7-cng-school-3335-22-30-36-seater.jpg",
+      detailsUrl: "https://motorfloor.com/buses/details/sml-isuzu/s7-cng-school-3335-22-30-36-seater",
+      price: "From ₹ 18.63 Lakh*"
+    },
+    {
+      key:"Staff",
+      name: "Ashok Leyland 12M FE Staff Bus",
+      imageUrl: "https://motorfloor.com/assets/admin/img/bus/ashok-leyland-12m-fe-staff-bus.jpg",
+      detailsUrl: "https://motorfloor.com/buses/details/ashok-leyland/12m-fe-staff-bus",
+      price: "From ₹ 16.89 Lakh*"
+    },
+    {
+      key:"Staff",
+      name: "Tata Cityride LP 712/45: 37 Seater",
+      imageUrl: "https://motorfloor.com/assets/admin/img/bus/tata-cityride-lp-71245-37-seater.jpg",
+      detailsUrl: "https://motorfloor.com/buses/details/tata/cityride-lp-71245-37-seater",
+      price: "From ₹ 22.13 Lakh*"
+    },
+    {
+      key:"Staff",
+      name: "Eicher Skyline RP 2112 M",
+      imageUrl: "https://motorfloor.com/assets/admin/img/bus/eicher-skyline-rp-2112-m.jpg",
+      detailsUrl: "https://motorfloor.com/buses/details/eicher/skyline-rp-2112-m",
+      price: "Coming Soon"
+    },
+    {
+      key:"Staff",
+      name: "Sml Isuzu Hiroi Staff Bus",
+      imageUrl: "https://motorfloor.com/assets/admin/img/bus/sml-isuzu-hiroi-staff-bus.jpg",
+      detailsUrl: "https://motorfloor.com/buses/details/sml-isuzu/hiroi-staff-bus",
+      price: "From ₹ 32 Lakh*"
+    },
+    {
+      key:"Staff",
+      name: "Mahindra Cruzio Grande 4880: 34 / 38 Seater",
+      imageUrl: "https://motorfloor.com/assets/admin/img/bus/mahindra-cruzio-grande-4880-34-38-seater.jpg",
+      detailsUrl: "https://motorfloor.com/buses/details/mahindra/cruzio-grande-4880-34-38-seater",
+      price: "Coming Soon"
+    },
+    {
+      key:"Electric",
+      name: "Tata Starbus Ultra City Electric",
+      imageUrl: "https://motorfloor.com/assets/admin/img/bus/tata-starbus-ultra-city-electric.jpg",
+      detailsUrl: "https://motorfloor.com/buses/details/tata/starbus-ultra-city-electric",
+      price: "From ₹ 29.12 Lakh*"
+    },
+    {
+      key:"Electric",
+      name: "Tata Starbus EV 4 12 Low Entry Electric Bus",
+      imageUrl: "https://motorfloor.com/assets/admin/img/bus/tata-starbus-ev-4-12-low-entry-electric-bus.jpg",
+      detailsUrl: "https://motorfloor.com/buses/details/tata/starbus-ev-4-12-low-entry-electric-bus",
+      price: "From ₹ 2.2 Cr*"
+    },
+    {
+      key:"Electric",
+      name: "Eicher Skyline Pro E 9M",
+      imageUrl: "https://motorfloor.com/assets/admin/img/bus/eicher-skyline-pro-e-9m.jpg",
+      detailsUrl: "https://motorfloor.com/buses/details/eicher/skyline-pro-e-9m",
+      price: "Coming Soon"
+    },
+    {
+      key:"Electric",
+      name: "Olectra X2",
+      imageUrl: "https://motorfloor.com/assets/admin/img/bus/olectra-x2.jpg",
+      detailsUrl: "https://motorfloor.com/buses/details/olectra/x2",
+      price: "From ₹ 1.7 Cr*"
+    },
+    {
+      key:"Electric",
+      name: "Eka E9 Electric",
+      imageUrl: "https://motorfloor.com/assets/admin/img/bus/eka-e9-electric.jpg",
+      detailsUrl: "https://motorfloor.com/buses/details/eka/e9-electric",
+      price: "From ₹ 80 Lakh*"
+    },
+    {
+      key:"Tourist",
+      name: "Force Traveller Royale",
+      imageUrl: "https://motorfloor.com/assets/admin/img/bus/force-traveller-royale.jpg",
+      detailsUrl: "https://motorfloor.com/buses/details/force/traveller-royale",
+      price: "From ₹ 15 Lakh*"
+    },
+    {
+      key:"Tourist",
+      name: "SML Isuzu Std 2815 : 20 Seater 6 tyre",
+      imageUrl: "https://motorfloor.com/assets/admin/img/bus/sml-isuzu-std-2815-20-seater-6-tyre.jpg",
+      detailsUrl: "https://motorfloor.com/buses/details/sml-isuzu/std-2815-20-seater-6-tyre",
+      price: "From ₹ 10 Lakh*"
+    },
+    {
+      key:"Tourist",
+      name: "Force Traveller 26",
+      imageUrl: "https://motorfloor.com/assets/admin/img/bus/force-traveller-26.jpg",
+      detailsUrl: "https://motorfloor.com/buses/details/force/traveller-26",
+      price: "From ₹ 14 Lakh*"
+    },
+    {
+      key:"Tourist",
+      name: "Tata Winger Tourist",
+      imageUrl: "https://motorfloor.com/assets/admin/img/bus/tata-winger-tourist.jpg",
+      detailsUrl: "https://motorfloor.com/buses/details/tata/winger-tourist",
+      price: "From ₹ 15.21 Lakh*"
+    },
+    {
+      key:"Tourist",
+      name: "Force Traveller 4020",
+      imageUrl: "https://motorfloor.com/assets/admin/img/bus/force-traveller-4020.jpg",
+      detailsUrl: "https://motorfloor.com/buses/details/force/traveller-4020",
+      price: "From ₹ 18.62 Lakh*"
+    }
     // Add more tractor objects here...
   ];
+
+  const AutoDataArray = [
+    
+    {
+      key:'3-Wheelers',
+      name: "Bajaj Auto Maxima Z Diesel Auto",
+      imageUrl: "https://motorfloor.com/assets/admin/img/three-wheeler/bajaj-auto-maxima-z-diesel-auto.jpg",
+      detailsUrl: "https://motorfloor.com/three-wheelers/details/bajaj-auto/maxima-z-diesel-auto",
+      price: "From ₹ 1.9 Lakh*"
+    },
+    {
+      key:'3-Wheelers',
+      name: "Bajaj Auto Maxima X Wide CNG Auto",
+      imageUrl: "https://motorfloor.com/assets/admin/img/three-wheeler/bajaj-auto-maxima-x-wide-cng-auto.jpg",
+      detailsUrl: "https://motorfloor.com/three-wheelers/details/bajaj-auto/maxima-x-wide-cng-auto",
+      price: "From ₹ 2.38 Lakh*"
+    },
+    {
+      key:'3-Wheelers',
+      name: "TVS Motors Deluxe ZS+ FI - 4S CNG R",
+      imageUrl: "https://motorfloor.com/assets/admin/img/three-wheeler/tvs-motors-deluxe-zs-fi-4s-cng-r.jpg",
+      detailsUrl: "https://motorfloor.com/three-wheelers/details/tvs-motors/deluxe-zs-fi-4s-cng-r",
+      price: "From ₹ 1.58 Lakh*"
+    },
+    {
+      key:'3-Wheelers',
+      name: "Mahindra Last Mile Mobility Treo Yaari HRT Auto",
+      imageUrl: "https://motorfloor.com/assets/admin/img/three-wheeler/mahindra-last-mile-mobility-treo-yaari-hrt-auto.jpg",
+      detailsUrl: "https://motorfloor.com/three-wheelers/details/mahindra/treo-yaari-hrt-auto",
+      price: "From ₹ 1.69 Lakh*"
+    },
+    {
+      key:'3-Wheelers',
+      name: "Bajaj Auto Maxima Z LPG Rickshaw",
+      imageUrl: "https://motorfloor.com/assets/admin/img/three-wheeler/bajaj-auto-maxima-z-lpg-rickshaw.jpg",
+      detailsUrl: "https://motorfloor.com/three-wheelers/details/bajaj-auto/maxima-z-lpg-rickshaw",
+      price: "From ₹ 1.96 Lakh*"
+    },
+    {
+      key:"Passenger",
+      name: "Bajaj Auto Maxima Z LPG Rickshaw",
+      imageUrl: "https://motorfloor.com/assets/admin/img/three-wheeler/bajaj-auto-maxima-z-lpg-rickshaw.jpg",
+      detailsUrl: "https://motorfloor.com/three-wheelers/details/bajaj-auto/maxima-z-lpg-rickshaw",
+      price: "From ₹ 1.96 Lakh*"
+    },
+    {
+      key:"Passenger",
+      name: "Mahindra Last Mile Mobility E-Alfa Mini Rickshaw",
+      imageUrl: "https://motorfloor.com/assets/admin/img/three-wheeler/mahindra-last-mile-mobility-e-alfa-mini-rickshaw.jpg",
+      detailsUrl: "https://motorfloor.com/three-wheelers/details/mahindra/e-alfa-mini-rickshaw",
+      price: "From ₹ 1.4 Lakh*"
+    },
+    {
+      key:"Passenger",
+      name: "TVS Motors Deluxe ZS+ FI - 4S CNG R",
+      imageUrl: "https://motorfloor.com/assets/admin/img/three-wheeler/tvs-motors-deluxe-zs-fi-4s-cng-r.jpg",
+      detailsUrl: "https://motorfloor.com/three-wheelers/details/tvs-motors/deluxe-zs-fi-4s-cng-r",
+      price: "From ₹ 1.58 Lakh*"
+    },
+    {
+      key:"Passenger",
+      name: "Piaggio Ape DX LPG Rickshaw",
+      imageUrl: "https://motorfloor.com/assets/admin/img/three-wheeler/piaggio-ape-dx-lpg-rickshaw.jpg",
+      detailsUrl: "https://motorfloor.com/three-wheelers/details/piaggio/ape-dx-lpg-rickshaw",
+      price: "From ₹ 2.72 Lakh*"
+    },
+    {
+      key:"Passenger",
+      name: "ATUL Auto Rik Petrol",
+      imageUrl: "https://motorfloor.com/assets/admin/img/three-wheeler/atul-auto-rik-petrol.jpg",
+      detailsUrl: "https://motorfloor.com/three-wheelers/details/atul-auto/rik-petrol",
+      price: "From ₹ 1.94 Lakh*"
+    },
+    {
+      key:"Cargo",
+      name: "Piaggio Ape Xtra LDX Plus Diesel Auto",
+      imageUrl: "https://motorfloor.com/assets/admin/img/three-wheeler/piaggio-ape-xtra-ldx-plus-diesel-auto.jpg",
+      detailsUrl: "https://motorfloor.com/three-wheelers/details/piaggio/ape-xtra-ldx-plus-diesel-auto",
+      price: "From ₹ 2.66 Lakh*"
+    },
+    {
+      key:"Cargo",
+      name: "ATUL Auto Shakti Cargo",
+      imageUrl: "https://motorfloor.com/assets/admin/img/three-wheeler/atul-auto-shakti-cargo.jpg",
+      detailsUrl: "https://motorfloor.com/three-wheelers/details/atul-auto/shakti-cargo",
+      price: "From ₹ 2.83 Lakh*"
+    },
+    {
+      key:"Cargo",
+      name: "Mahindra Last Mile Mobility Alfa Plus CNG",
+      imageUrl: "https://motorfloor.com/assets/admin/img/three-wheeler/mahindra-last-mile-mobility-alfa-plus-cng.jpg",
+      detailsUrl: "https://motorfloor.com/three-wheelers/details/mahindra/alfa-plus-cng",
+      price: "From ₹ 2.75 Lakh*"
+    },
+    {
+      key:"Cargo",
+      name: "Bajaj Auto Maxima C",
+      imageUrl: "https://motorfloor.com/assets/admin/img/three-wheeler/bajaj-auto-maxima-c.jpg",
+      detailsUrl: "https://motorfloor.com/three-wheelers/details/bajaj-auto/maxima-c",
+      price: "From ₹ 2.83 Lakh*"
+    },
+    {
+      key:"Cargo",
+      name: "Mahindra Last Mile Mobility Alfa Plus",
+      imageUrl: "https://motorfloor.com/assets/admin/img/three-wheeler/mahindra-last-mile-mobility-alfa-plus.jpg",
+      detailsUrl: "https://motorfloor.com/three-wheelers/details/mahindra/alfa-plus",
+      price: "From ₹ 2.79 Lakh*"
+    },
+    {
+      key:"Electric",
+      name: "Altigreen neEV High Deck",
+      imageUrl: "https://motorfloor.com/assets/admin/img/three-wheeler/altigreen-neev-high-deck.jpg",
+      detailsUrl: "https://motorfloor.com/three-wheelers/details/altigreen/neev-high-deck",
+      price: "From ₹ 3.25 Lakh*"
+    },
+    {
+      key:"Electric",
+      name: "ADM E-Cargo Full",
+      imageUrl: "https://motorfloor.com/assets/admin/img/three-wheeler/adm-e-cargo-full.jpg",
+      detailsUrl: "https://motorfloor.com/three-wheelers/details/adm-ev/e-cargo-full",
+      price: "From ₹ 1.84 Lakh*"
+    },
+    {
+      key:"Electric",
+      name: "Omega Seiki Mobility Rage Plus",
+      imageUrl: "https://motorfloor.com/assets/admin/img/three-wheeler/omega-seiki-mobility-rage-plus.jpg",
+      detailsUrl: "https://motorfloor.com/three-wheelers/details/osm/rage-plus",
+      price: "From ₹ 3.4 Lakh*"
+    },
+    {
+      key:"Electric",
+      name: "Mahindra Last Mile Mobility Zor Grand",
+      imageUrl: "https://motorfloor.com/assets/admin/img/three-wheeler/mahindra-last-mile-mobility-zor-grand.jpg",
+      detailsUrl: "https://motorfloor.com/three-wheelers/details/mahindra/zor-grand",
+      price: "From ₹ 3.49 Lakh*"
+    },
+    {
+      key:"Electric",
+      name: "Piaggio Ape E-Xtra FX EV Auto",
+      imageUrl: "https://motorfloor.com/assets/admin/img/three-wheeler/piaggio-ape-e-xtra-fx-ev-auto.jpg",
+      detailsUrl: "https://motorfloor.com/three-wheelers/details/piaggio/ape-e-xtra-fx-ev-auto",
+      price: "From ₹ 3.12 Lakh*"
+    },
+    {
+      key:"CNG ",
+      name: "Bajaj Auto Maxima Z CNG Rickshaw",
+      imageUrl: "https://motorfloor.com/assets/admin/img/three-wheeler/bajaj-auto-maxima-z-cng-rickshaw.jpg",
+      detailsUrl: "https://motorfloor.com/three-wheelers/details/bajaj-auto/maxima-z-cng-rickshaw",
+      price: "From ₹ 1.9 Lakh*"
+    },
+    {
+      key:"CNG ",
+      name: "Piaggio Ape NXT+ CNG Rickshaw",
+      imageUrl: "https://motorfloor.com/assets/admin/img/three-wheeler/piaggio-ape-nxt-cng-rickshaw.jpg",
+      detailsUrl: "https://motorfloor.com/three-wheelers/details/piaggio/ape-nxt-cng-rickshaw",
+      price: "From ₹ 2.36 Lakh*"
+    },
+    {
+      key:"CNG ",
+      name: "Piaggio Ape City Plus CNG Auto",
+      imageUrl: "https://motorfloor.com/assets/admin/img/three-wheeler/piaggio-ape-city-plus-cng-auto.jpg",
+      detailsUrl: "https://motorfloor.com/three-wheelers/details/piaggio/ape-city-plus-cng-auto",
+      price: "From ₹ 2.22 Lakh*"
+    },
+    {
+      key:"CNG ",
+      name: "TVS Motors Deluxe ZS+ FI - 4S CNG R",
+      imageUrl: "https://motorfloor.com/assets/admin/img/three-wheeler/tvs-motors-deluxe-zs-fi-4s-cng-r.jpg",
+      detailsUrl: "https://motorfloor.com/three-wheelers/details/tvs-motors/deluxe-zs-fi-4s-cng-r",
+      price: "From ₹ 1.58 Lakh*"
+    },
+    {
+      key:"CNG ",
+      name: "Bajaj Auto RE CNG Rickshaw",
+      imageUrl: "https://motorfloor.com/assets/admin/img/three-wheeler/bajaj-auto-re-cng-rickshaw.jpg",
+      detailsUrl: "https://motorfloor.com/three-wheelers/details/bajaj-auto/re-cng-rickshaw",
+      price: "From ₹ 2.34 Lakh*"
+    }
+    // Add more tractor objects here...
+  ];
+
 
 
   return (
@@ -6867,277 +7591,12 @@ export default function Motorfloor() {
 
 
 <div>
-      <h4>Best Selling Tractors in India</h4>
+      
       <TabList tabs={tabs} updateViewAllUrl={updateViewAllUrl} tractorData={TractorDataArray}  />
 </div>
 {/* <VehicleSection vehicleData={TractorDataArray}  /> */}
 
-{/* <div className="container section-brand-list" style={{padding: '0px 16px'}}>
-  <div className="cstm-slider-wrapper">
-    <h2 className="text-start cstm-brand-list-heading">List of Tractor Brands in India</h2>
-    <button id="prev-slide" className="cstm-slide-button material-symbols-rounded">    
-      <i className="fa fa-chevron-left" aria-hidden="true" style={{fontSize: 12}} />
-    </button>
-    <ul className="cstm-image-list">
-      <a href="https://motorfloor.com/tractors/mahindra">          
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/tractor-brands/mahindra.jpg" alt="Mahindra" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">Mahindra</div>
-        </div>
-      </a>         
-      <a href="https://motorfloor.com/tractors/john-deere">          
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/tractor-brands/john-deere.jpg" alt="John Deere" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">John Deere</div>
-        </div>
-      </a>         
-      <a href="https://motorfloor.com/tractors/new-holland">          
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/tractor-brands/new-holland.jpg" alt="New Holland" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">New Holland</div>
-        </div>
-      </a>         
-      <a href="https://motorfloor.com/tractors/vst">          
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/tractor-brands/vst.jpg" alt="VST" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">VST</div>
-        </div>
-      </a>         
-      <a href="https://motorfloor.com/tractors/ace">          
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/tractor-brands/ace.jpg" alt="ACE" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">ACE</div>
-        </div>
-      </a>         
-      <a href="https://motorfloor.com/tractors/eicher">          
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/tractor-brands/eicher.jpg" alt="Eicher" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">Eicher</div>
-        </div>
-      </a>         
-      <a href="https://motorfloor.com/tractors/farmtrac">          
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/tractor-brands/farmtrac.jpg" alt="FARMTRAC" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">FARMTRAC</div>
-        </div>
-      </a>         
-      <a href="https://motorfloor.com/tractors/force">          
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/tractor-brands/force.jpg" alt="Force Motors" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">Force Motors</div>
-        </div>
-      </a>         
-      <a href="https://motorfloor.com/tractors/indo-farm">          
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/tractor-brands/indo-farm.jpg" alt="Indo Farm" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">Indo Farm</div>
-        </div>
-      </a>         
-      <a href="https://motorfloor.com/tractors/kartar">          
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/tractor-brands/kartar.jpg" alt="KARTAR" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">KARTAR</div>
-        </div>
-      </a>         
-      <a href="https://motorfloor.com/tractors/kubota">          
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/tractor-brands/kubota.jpg" alt="Kubota" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">Kubota</div>
-        </div>
-      </a>         
-      <a href="https://motorfloor.com/tractors/powertrac">          
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/tractor-brands/powertrac.jpg" alt="POWERTRAC" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">POWERTRAC</div>
-        </div>
-      </a>         
-      <a href="https://motorfloor.com/tractors/sonalika">          
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/tractor-brands/sonalika.jpg" alt="SONALIKA" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">SONALIKA</div>
-        </div>
-      </a>         
-      <a href="https://motorfloor.com/tractors/swaraj">          
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/tractor-brands/swaraj.jpg" alt="SWARAJ" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">SWARAJ</div>
-        </div>
-      </a>         
-      <a href="https://motorfloor.com/tractors/massey-ferguson">          
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/tractor-brands/massey-ferguson.jpg" alt="Massey Ferguson" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">Massey Ferguson</div>
-        </div>
-      </a>         
-      <a href="https://motorfloor.com/tractors/autonxt-automation">          
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/tractor-brands/autonxt-automation.jpg" alt="Autonxt Automation" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">Autonxt Automati...</div>
-        </div>
-      </a>         
-      <a href="https://motorfloor.com/tractors/captain">          
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/tractor-brands/captain.jpg" alt="CAPTAIN" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">CAPTAIN</div>
-        </div>
-      </a>         
-      <a href="https://motorfloor.com/tractors/cellestial-emobility">          
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/tractor-brands/cellestial-emobility.jpg" alt="Cellestial eMobility" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">Cellestial eMobi...</div>
-        </div>
-      </a>         
-      <a href="https://motorfloor.com/tractors/digitrac">          
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/tractor-brands/digitrac.jpg" alt="DigiTrac" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">DigiTrac</div>
-        </div>
-      </a>         
-      <a href="https://motorfloor.com/tractors/escorts-kubota">          
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/tractor-brands/escorts-kubota.jpg" alt="Escorts Kubota" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">Escorts Kubota</div>
-        </div>
-      </a>         
-      <a href="https://motorfloor.com/tractors/hav">          
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/tractor-brands/hav.jpg" alt="HAV" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">HAV</div>
-        </div>
-      </a>         
-      <a href="https://motorfloor.com/tractors/hindustan">          
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/tractor-brands/hindustan.jpg" alt="HINDUSTAN" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">HINDUSTAN</div>
-        </div>
-      </a>         
-      <a href="https://motorfloor.com/tractors/preet">          
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/tractor-brands/preet.jpg" alt="Preet" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">Preet</div>
-        </div>
-      </a>         
-      <a href="https://motorfloor.com/tractors/same-deutz-fahr">          
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/tractor-brands/same-deutz-fahr.jpg" alt="Same Deutz-Fahr" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">Same Deutz-Fahr</div>
-        </div>
-      </a>         
-      <a href="https://motorfloor.com/tractors/solis">          
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/tractor-brands/solis.jpg" alt="Solis" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">Solis</div>
-        </div>
-      </a>         
-      <a href="https://motorfloor.com/tractors/standard">          
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/tractor-brands/standard.jpg" alt="Standard" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">Standard</div>
-        </div>
-      </a>         
-      <a href="https://motorfloor.com/tractors/trakstar">          
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/tractor-brands/trakstar.jpg" alt="Trakstar" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">Trakstar</div>
-        </div>
-      </a>         
-      <a href="https://motorfloor.com/tractors/valdo-tractors">          
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/tractor-brands/valdo-tractors.jpg" alt="Valdo" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">Valdo</div>
-        </div>
-      </a>         
-    </ul>
-    <button id="next-slide" className="cstm-slide-button material-symbols-rounded">          
-      <i className="fa fa-chevron-right" aria-hidden="true" style={{fontSize: 12}} />
-    </button>
-    
-  </div>
-</div> */}
+
 
 <div className="container section-brand-list" style={{ padding: '0px 16px' }}>
       <div className="cstm-slider-wrapper-truck">
@@ -7166,846 +7625,14 @@ export default function Motorfloor() {
 
 <div className="section-divider"></div>
 
-{/* <section className="product-area">
-  <div className="container" style={{padding: '0px 16px'}}>
-    <div className="row">
-      <div className="col-12 aos-init aos-animate" data-aos="fade-up">
-        <div className="mb-16 aos-init aos-animate" data-aos="fade-up">
-          <h2 className="product-heading">Best Selling Trucks in India</h2>
-        </div>
-        <div className="tabs-navigation" style={{marginBottom: 24}}>
-          <ul className="nav nav-tabs" role="tablist">
-            <li className="nav-item active cstm-nav-item" data-bs-toggle="tab" data-bs-target="#truck6" onclick="updateViewAllUrl('new', 'Trucks')" aria-selected="true" role="tab">
-              Trucks
-              <div />
-            </li>
-            <li className="nav-item cstm-nav-item" data-bs-toggle="tab" data-bs-target="#truck7" onclick="updateViewAllUrl('mini', 'Mini Trucks')" aria-selected="false" tabIndex={-1} role="tab">
-              Mini Trucks
-              <div />
-            </li>
-            <li className="nav-item cstm-nav-item" data-bs-toggle="tab" data-bs-target="#truck8" onclick="updateViewAllUrl('pickup', 'Pickup Trucks')" aria-selected="false" tabIndex={-1} role="tab">
-              Pickup Trucks
-              <div />
-            </li>
-            <li className="nav-item cstm-nav-item" data-bs-toggle="tab" data-bs-target="#truck10" onclick="updateViewAllUrl('dumpers', 'Dumpers')" aria-selected="false" tabIndex={-1} role="tab">
-              Dumpers
-              <div />
-            </li>
-            <li className="nav-item cstm-nav-item" data-bs-toggle="tab" data-bs-target="#truck11" onclick="updateViewAllUrl('tractor-trailers', 'Tractor Trailers')" aria-selected="false" tabIndex={-1} role="tab">
-              Tractor Trailers
-              <div />
-            </li>
-            <li className="nav-item cstm-nav-item" data-bs-toggle="tab" data-bs-target="#truck12" onclick="updateViewAllUrl('cng', 'CNG Trucks')" aria-selected="false" tabIndex={-1} role="tab">
-              CNG Trucks
-              <div />
-            </li>
-            <li className="nav-item cstm-nav-item" data-bs-toggle="tab" data-bs-target="#truck13" onclick="updateViewAllUrl('bsvi', 'BS-VI Trucks')" aria-selected="false" tabIndex={-1} role="tab">
-              BS-VI Trucks
-              <div />
-            </li>
-          </ul>
-          <div className="tabs-nav-all-vehicles">
-            <a href="https://motorfloor.com/trucks/new" className="category-url">
-              <div className="product-view-all">
-                <span className="category-name">All New Trucks</span> <img src="https://motorfloor.com/assets/img/icon-right.svg" alt=">" />
-              </div>
-            </a>    
-          </div>
-          <hr className="gray-line-style" />
-        </div>
-      </div>
-    </div>
-    <div className="col-12">            
-      <div className="tab-content aos-init aos-animate" data-aos="fade-up">
-        <div className="tab-pane fade active show" id="truck6" role="tabpanel">
-          <div className="popular-tractor-list">
-            <div className="col-md-3 col-custom">
-              <figure className="product-img mb-16">
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/3532-tipper-8x4" className="lazy-container ratio ratio-2-3 bg-transparent">
-                  <img className="rounded-image ls-is-cached lazyloaded" data-src="https://motorfloor.com/assets/admin/img/truck/ashok-leyland-3532-tipper-8x4.jpg" alt="Ashok Leyland 3532 Tipper 8x4" src="https://motorfloor.com/assets/admin/img/truck/ashok-leyland-3532-tipper-8x4.jpg" />
-                </a>
-              </figure>
-              <div className="product-details">
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/3532-tipper-8x4" title="Ashok Leyland 3532 Tipper 8x4">
-                  <span className="product-category">Ashok Leyland 3532 T...</span>
-                </a>
-                <div className="prod-price mb-16">From <span style={{fontSize: 12}}>₹</span> 58.1 Lakh* </div>
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/3532-tipper-8x4">
-                  <button type="button" className="get-quote-button">View Details</button>
-                </a>
-              </div>
-            </div>
-            <div className="col-md-3 col-custom">
-              <figure className="product-img mb-16">
-                <a href="https://motorfloor.com/trucks/details/bharat-benz/2823c" className="lazy-container ratio ratio-2-3 bg-transparent">
-                  <img className="rounded-image ls-is-cached lazyloaded" data-src="https://motorfloor.com/assets/admin/img/truck/bharat-benz-2823c.jpg" alt="Bharat Benz 2823C" src="https://motorfloor.com/assets/admin/img/truck/bharat-benz-2823c.jpg" />
-                </a>
-              </figure>
-              <div className="product-details">
-                <a href="https://motorfloor.com/trucks/details/bharat-benz/2823c" title="Bharat Benz 2823C">
-                  <span className="product-category">Bharat Benz 2823C</span>
-                </a>
-                <div className="prod-price mb-16">From <span style={{fontSize: 12}}>₹</span> 37.8 Lakh* </div>
-                <a href="https://motorfloor.com/trucks/details/bharat-benz/2823c">
-                  <button type="button" className="get-quote-button">View Details</button>
-                </a>
-              </div>
-            </div>
-            <div className="col-md-3 col-custom">
-              <figure className="product-img mb-16">
-                <a href="https://motorfloor.com/trucks/details/eicher/pro-2114xp" className="lazy-container ratio ratio-2-3 bg-transparent">
-                  <img className="rounded-image ls-is-cached lazyloaded" data-src="https://motorfloor.com/assets/admin/img/truck/eicher-pro-2114xp.jpg" alt="Eicher Pro 2114XP" src="https://motorfloor.com/assets/admin/img/truck/eicher-pro-2114xp.jpg" />
-                </a>
-              </figure>
-              <div className="product-details">
-                <a href="https://motorfloor.com/trucks/details/eicher/pro-2114xp" title="Eicher Pro 2114XP">
-                  <span className="product-category">Eicher Pro 2114XP</span>
-                </a>
-                <div className="prod-price mb-16">From <span style={{fontSize: 12}}>₹</span> 23.11 Lakh* </div>
-                <a href="https://motorfloor.com/trucks/details/eicher/pro-2114xp">
-                  <button type="button" className="get-quote-button">View Details</button>
-                </a>
-              </div>
-            </div>
-            <div className="col-md-3 col-custom">
-              <figure className="product-img mb-16">
-                <a href="https://motorfloor.com/trucks/details/tata/lpt-4825" className="lazy-container ratio ratio-2-3 bg-transparent">
-                  <img className="rounded-image ls-is-cached lazyloaded" data-src="https://motorfloor.com/assets/admin/img/truck/tata-lpt-4825.jpg" alt="Tata LPT 4825" src="https://motorfloor.com/assets/admin/img/truck/tata-lpt-4825.jpg" />
-                </a>
-              </figure>
-              <div className="product-details">
-                <a href="https://motorfloor.com/trucks/details/tata/lpt-4825" title="Tata LPT 4825">
-                  <span className="product-category">Tata LPT 4825</span>
-                </a>
-                <div className="prod-price mb-16">From <span style={{fontSize: 12}}>₹</span> 44.43 Lakh* </div>
-                <a href="https://motorfloor.com/trucks/details/tata/lpt-4825">
-                  <button type="button" className="get-quote-button">View Details</button>
-                </a>
-              </div>
-            </div>
-            <div className="col-md-3 col-custom">
-              <figure className="product-img mb-16">
-                <a href="https://motorfloor.com/trucks/details/mahindra/blazo-x-55-trailer" className="lazy-container ratio ratio-2-3 bg-transparent">
-                  <img className="rounded-image ls-is-cached lazyloaded" data-src="https://motorfloor.com/assets/admin/img/truck/mahindra-blazo-x-55-trailer.jpg" alt="Mahindra Blazo X 55 Trailer" src="https://motorfloor.com/assets/admin/img/truck/mahindra-blazo-x-55-trailer.jpg" />
-                </a>
-              </figure>
-              <div className="product-details">
-                <a href="https://motorfloor.com/trucks/details/mahindra/blazo-x-55-trailer" title="Mahindra Blazo X 55 Trailer">
-                  <span className="product-category">Mahindra Blazo X 55...</span>
-                </a>
-                <div className="prod-price mb-16">From <span style={{fontSize: 12}}>₹</span> 41.44 Lakh* </div>
-                <a href="https://motorfloor.com/trucks/details/mahindra/blazo-x-55-trailer">
-                  <button type="button" className="get-quote-button">View Details</button>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="tab-pane fade" id="truck7" role="tabpanel">
-          <div className="popular-tractor-list">
-            <div className="col-md-3 col-custom">
-              <figure className="product-img mb-16">
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/dost-plus" className="lazy-container ratio ratio-2-3 bg-transparent">
-                  <img className="lazyload rounded-image" data-src="https://motorfloor.com/assets/admin/img/truck/ashok-leyland-dost-plus.jpg" alt="Ashok Leyland Dost+" />
-                </a>
-              </figure>
-              <div className="product-details">
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/dost-plus" title="Ashok Leyland Dost+">
-                  <span className="product-category">Ashok Leyland Dost+</span>
-                </a>
-                <div className="prod-price mb-16">From <span style={{fontSize: 12}}>₹</span> 7.75 Lakh* </div>
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/dost-plus">
-                  <button type="button" className="get-quote-button">View Details</button>
-                </a>
-              </div>
-            </div>
-            <div className="col-md-3 col-custom">
-              <figure className="product-img mb-16">
-                <a href="https://motorfloor.com/trucks/details/mahindra/bolero-camper-4wd" className="lazy-container ratio ratio-2-3 bg-transparent">
-                  <img className="lazyload rounded-image" data-src="https://motorfloor.com/assets/admin/img/truck/mahindra-bolero-camper-4wd.jpg" alt="Mahindra Bolero Camper 4WD" />
-                </a>
-              </figure>
-              <div className="product-details">
-                <a href="https://motorfloor.com/trucks/details/mahindra/bolero-camper-4wd" title="Mahindra Bolero Camper 4WD">
-                  <span className="product-category">Mahindra Bolero Camp...</span>
-                </a>
-                <div className="prod-price mb-16">From <span style={{fontSize: 12}}>₹</span> 9.27 Lakh* </div>
-                <a href="https://motorfloor.com/trucks/details/mahindra/bolero-camper-4wd">
-                  <button type="button" className="get-quote-button">View Details</button>
-                </a>
-              </div>
-            </div>
-            <div className="col-md-3 col-custom">
-              <figure className="product-img mb-16">
-                <a href="https://motorfloor.com/trucks/details/tata/yodha-pickup" className="lazy-container ratio ratio-2-3 bg-transparent">
-                  <img className="lazyload rounded-image" data-src="https://motorfloor.com/assets/admin/img/truck/tata-yodha-pickup.jpg" alt="Tata Yodha Pickup" />
-                </a>
-              </figure>
-              <div className="product-details">
-                <a href="https://motorfloor.com/trucks/details/tata/yodha-pickup" title="Tata Yodha Pickup">
-                  <span className="product-category">Tata Yodha Pickup</span>
-                </a>
-                <div className="prod-price mb-16">From <span style={{fontSize: 12}}>₹</span> 9.66 Lakh* </div>
-                <a href="https://motorfloor.com/trucks/details/tata/yodha-pickup">
-                  <button type="button" className="get-quote-button">View Details</button>
-                </a>
-              </div>
-            </div>
-            <div className="col-md-3 col-custom">
-              <figure className="product-img mb-16">
-                <a href="https://motorfloor.com/trucks/details/eicher/pro-2049" className="lazy-container ratio ratio-2-3 bg-transparent">
-                  <img className="lazyload rounded-image" data-src="https://motorfloor.com/assets/admin/img/truck/eicher-pro-2049.jpg" alt="Eicher Pro 2049" />
-                </a>
-              </figure>
-              <div className="product-details">
-                <a href="https://motorfloor.com/trucks/details/eicher/pro-2049" title="Eicher Pro 2049">
-                  <span className="product-category">Eicher Pro 2049</span>
-                </a>
-                <div className="prod-price mb-16">From <span style={{fontSize: 12}}>₹</span> 10.27 Lakh* </div>
-                <a href="https://motorfloor.com/trucks/details/eicher/pro-2049">
-                  <button type="button" className="get-quote-button">View Details</button>
-                </a>
-              </div>
-            </div>
-            <div className="col-md-3 col-custom">
-              <figure className="product-img mb-16">
-                <a href="https://motorfloor.com/trucks/details/force/kargo-king" className="lazy-container ratio ratio-2-3 bg-transparent">
-                  <img className="lazyload rounded-image" data-src="https://motorfloor.com/assets/admin/img/truck/force-kargo-king.jpg" alt="Force Kargo King" />
-                </a>
-              </figure>
-              <div className="product-details">
-                <a href="https://motorfloor.com/trucks/details/force/kargo-king" title="Force Kargo King">
-                  <span className="product-category">Force Kargo King</span>
-                </a>
-                <div className="prod-price mb-16">From <span style={{fontSize: 12}}>₹</span> 6.49 Lakh* </div>
-                <a href="https://motorfloor.com/trucks/details/force/kargo-king">
-                  <button type="button" className="get-quote-button">View Details</button>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="tab-pane fade" id="truck8" role="tabpanel">
-          <div className="popular-tractor-list">
-            <div className="col-md-3 col-custom">
-              <figure className="product-img mb-16">
-                <a href="https://motorfloor.com/trucks/details/mahindra/bolero-pikup-17t" className="lazy-container ratio ratio-2-3 bg-transparent">
-                  <img className="lazyload rounded-image" data-src="https://motorfloor.com/assets/admin/img/truck/mahindra-bolero-pikup-17t.jpg" alt="Mahindra Bolero Pikup 1.7T" />
-                </a>
-              </figure>
-              <div className="product-details">
-                <a href="https://motorfloor.com/trucks/details/mahindra/bolero-pikup-17t" title="Mahindra Bolero Pikup 1.7T">
-                  <span className="product-category">Mahindra Bolero Piku...</span>
-                </a>
-                <div className="prod-price mb-16">From <span style={{fontSize: 12}}>₹</span> 9.02 Lakh* </div>
-                <a href="https://motorfloor.com/trucks/details/mahindra/bolero-pikup-17t">
-                  <button type="button" className="get-quote-button">View Details</button>
-                </a>
-              </div>
-            </div>
-            <div className="col-md-3 col-custom">
-              <figure className="product-img mb-16">
-                <a href="https://motorfloor.com/trucks/details/mahindra/imperio" className="lazy-container ratio ratio-2-3 bg-transparent">
-                  <img className="lazyload rounded-image" data-src="https://motorfloor.com/assets/admin/img/truck/mahindra-imperio.jpg" alt="Mahindra Imperio" />
-                </a>
-              </figure>
-              <div className="product-details">
-                <a href="https://motorfloor.com/trucks/details/mahindra/imperio" title="Mahindra Imperio">
-                  <span className="product-category">Mahindra Imperio</span>
-                </a>
-                <div className="prod-price mb-16">From <span style={{fontSize: 12}}>₹</span> 7.32 Lakh* </div>
-                <a href="https://motorfloor.com/trucks/details/mahindra/imperio">
-                  <button type="button" className="get-quote-button">View Details</button>
-                </a>
-              </div>
-            </div>
-            <div className="col-md-3 col-custom">
-              <figure className="product-img mb-16">
-                <a href="https://motorfloor.com/trucks/details/mahindra/supro-profit-truck-maxi" className="lazy-container ratio ratio-2-3 bg-transparent">
-                  <img className="lazyload rounded-image" data-src="https://motorfloor.com/assets/admin/img/truck/mahindra-supro-profit-truck-maxi.jpg" alt="Mahindra Supro Profit Truck Maxi" />
-                </a>
-              </figure>
-              <div className="product-details">
-                <a href="https://motorfloor.com/trucks/details/mahindra/supro-profit-truck-maxi" title="Mahindra Supro Profit Truck Maxi">
-                  <span className="product-category">Mahindra Supro Profi...</span>
-                </a>
-                <div className="prod-price mb-16">From <span style={{fontSize: 12}}>₹</span> 6.84 Lakh* </div>
-                <a href="https://motorfloor.com/trucks/details/mahindra/supro-profit-truck-maxi">
-                  <button type="button" className="get-quote-button">View Details</button>
-                </a>
-              </div>
-            </div>
-            <div className="col-md-3 col-custom">
-              <figure className="product-img mb-16">
-                <a href="https://motorfloor.com/trucks/details/mahindra/supro-cng" className="lazy-container ratio ratio-2-3 bg-transparent">
-                  <img className="lazyload rounded-image" data-src="https://motorfloor.com/assets/admin/img/truck/mahindra-supro-cng.jpg" alt="Mahindra Supro CNG" />
-                </a>
-              </figure>
-              <div className="product-details">
-                <a href="https://motorfloor.com/trucks/details/mahindra/supro-cng" title="Mahindra Supro CNG">
-                  <span className="product-category">Mahindra Supro CNG</span>
-                </a>
-                <div className="prod-price mb-16">From <span style={{fontSize: 12}}>₹</span> 5.76 Lakh* </div>
-                <a href="https://motorfloor.com/trucks/details/mahindra/supro-cng">
-                  <button type="button" className="get-quote-button">View Details</button>
-                </a>
-              </div>
-            </div>
-            <div className="col-md-3 col-custom">
-              <figure className="product-img mb-16">
-                <a href="https://motorfloor.com/trucks/details/tata/ace-ht-plus" className="lazy-container ratio ratio-2-3 bg-transparent">
-                  <img className="lazyload rounded-image" data-src="https://motorfloor.com/assets/admin/img/truck/tata-ace-ht-plus.jpg" alt="Tata Ace HT Plus" />
-                </a>
-              </figure>
-              <div className="product-details">
-                <a href="https://motorfloor.com/trucks/details/tata/ace-ht-plus" title="Tata Ace HT Plus">
-                  <span className="product-category">Tata Ace HT Plus</span>
-                </a>
-                <div className="prod-price mb-16">From <span style={{fontSize: 12}}>₹</span> 6.69 Lakh* </div>
-                <a href="https://motorfloor.com/trucks/details/tata/ace-ht-plus">
-                  <button type="button" className="get-quote-button">View Details</button>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="tab-pane fade" id="truck10" role="tabpanel">
-          <div className="popular-tractor-list">
-            <div className="col-md-3 col-custom">
-              <figure className="product-img mb-16">
-                <a href="https://motorfloor.com/trucks/details/bharat-benz/1217c" className="lazy-container ratio ratio-2-3 bg-transparent">
-                  <img className="lazyload rounded-image" data-src="https://motorfloor.com/assets/admin/img/truck/bharat-benz-1217c.jpg" alt="Bharat Benz 1217C" />
-                </a>
-              </figure>
-              <div className="product-details">
-                <a href="https://motorfloor.com/trucks/details/bharat-benz/1217c" title="Bharat Benz 1217C">
-                  <span className="product-category">Bharat Benz 1217C</span>
-                </a>
-                <div className="prod-price mb-16">From <span style={{fontSize: 12}}>₹</span> 20.61 Lakh* </div>
-                <a href="https://motorfloor.com/trucks/details/bharat-benz/1217c">
-                  <button type="button" className="get-quote-button">View Details</button>
-                </a>
-              </div>
-            </div>
-            <div className="col-md-3 col-custom">
-              <figure className="product-img mb-16">
-                <a href="https://motorfloor.com/trucks/details/eicher/pro-8035xm" className="lazy-container ratio ratio-2-3 bg-transparent">
-                  <img className="lazyload rounded-image" data-src="https://motorfloor.com/assets/admin/img/truck/eicher-pro-8035xm.jpg" alt="Eicher Pro 8035XM" />
-                </a>
-              </figure>
-              <div className="product-details">
-                <a href="https://motorfloor.com/trucks/details/eicher/pro-8035xm" title="Eicher Pro 8035XM">
-                  <span className="product-category">Eicher Pro 8035XM</span>
-                </a>
-                <div className="prod-price mb-16">From <span style={{fontSize: 12}}>₹</span> 71.3 Lakh* </div>
-                <a href="https://motorfloor.com/trucks/details/eicher/pro-8035xm">
-                  <button type="button" className="get-quote-button">View Details</button>
-                </a>
-              </div>
-            </div>
-            <div className="col-md-3 col-custom">
-              <figure className="product-img mb-16">
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/2820-tipper" className="lazy-container ratio ratio-2-3 bg-transparent">
-                  <img className="lazyload rounded-image" data-src="https://motorfloor.com/assets/admin/img/truck/ashok-leyland-2820-tipper.jpg" alt="Ashok Leyland 2820 Tipper" />
-                </a>
-              </figure>
-              <div className="product-details">
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/2820-tipper" title="Ashok Leyland 2820 Tipper">
-                  <span className="product-category">Ashok Leyland 2820 T...</span>
-                </a>
-                <div className="prod-price mb-16">From <span style={{fontSize: 12}}>₹</span> 39.55 Lakh* </div>
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/2820-tipper">
-                  <button type="button" className="get-quote-button">View Details</button>
-                </a>
-              </div>
-            </div>
-            <div className="col-md-3 col-custom">
-              <figure className="product-img mb-16">
-                <a href="https://motorfloor.com/trucks/details/tata/912-lpk" className="lazy-container ratio ratio-2-3 bg-transparent">
-                  <img className="lazyload rounded-image" data-src="https://motorfloor.com/assets/admin/img/truck/tata-912-lpk.jpg" alt="Tata 912 LPK" />
-                </a>
-              </figure>
-              <div className="product-details">
-                <a href="https://motorfloor.com/trucks/details/tata/912-lpk" title="Tata 912 LPK">
-                  <span className="product-category">Tata 912 LPK</span>
-                </a>
-                <div className="prod-price mb-16">From <span style={{fontSize: 12}}>₹</span> 18.64 Lakh* </div>
-                <a href="https://motorfloor.com/trucks/details/tata/912-lpk">
-                  <button type="button" className="get-quote-button">View Details</button>
-                </a>
-              </div>
-            </div>
-            <div className="col-md-3 col-custom">
-              <figure className="product-img mb-16">
-                <a href="https://motorfloor.com/trucks/details/bharat-benz/1923c" className="lazy-container ratio ratio-2-3 bg-transparent">
-                  <img className="lazyload rounded-image" data-src="https://motorfloor.com/assets/admin/img/truck/bharat-benz-1923c.jpg" alt="Bharat Benz 1923C" />
-                </a>
-              </figure>
-              <div className="product-details">
-                <a href="https://motorfloor.com/trucks/details/bharat-benz/1923c" title="Bharat Benz 1923C">
-                  <span className="product-category">Bharat Benz 1923C</span>
-                </a>
-                <div className="prod-price mb-16">From <span style={{fontSize: 12}}>₹</span> 30.87 Lakh* </div>
-                <a href="https://motorfloor.com/trucks/details/bharat-benz/1923c">
-                  <button type="button" className="get-quote-button">View Details</button>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="tab-pane fade" id="truck11" role="tabpanel">
-          <div className="popular-tractor-list">
-            <div className="col-md-3 col-custom">
-              <figure className="product-img mb-16">
-                <a href="https://motorfloor.com/trucks/details/tata/signa-5530s" className="lazy-container ratio ratio-2-3 bg-transparent">
-                  <img className="lazyload rounded-image" data-src="https://motorfloor.com/assets/admin/img/truck/tata-signa-5530s.jpg" alt="Tata Signa 5530.S" />
-                </a>
-              </figure>
-              <div className="product-details">
-                <a href="https://motorfloor.com/trucks/details/tata/signa-5530s" title="Tata Signa 5530.S">
-                  <span className="product-category">Tata Signa 5530.S</span>
-                </a>
-                <div className="prod-price mb-16">From <span style={{fontSize: 12}}>₹</span> 42.6 Lakh* </div>
-                <a href="https://motorfloor.com/trucks/details/tata/signa-5530s">
-                  <button type="button" className="get-quote-button">View Details</button>
-                </a>
-              </div>
-            </div>
-            <div className="col-md-3 col-custom">
-              <figure className="product-img mb-16">
-                <a href="https://motorfloor.com/trucks/details/mahindra/blazo-x-46-bs6-tractor" className="lazy-container ratio ratio-2-3 bg-transparent">
-                  <img className="lazyload rounded-image" data-src="https://motorfloor.com/assets/admin/img/truck/mahindra-blazo-x-46-bs6-tractor.jpg" alt="Mahindra BLAZO X 46 BS6 Tractor" />
-                </a>
-              </figure>
-              <div className="product-details">
-                <a href="https://motorfloor.com/trucks/details/mahindra/blazo-x-46-bs6-tractor" title="Mahindra BLAZO X 46 BS6 Tractor">
-                  <span className="product-category">Mahindra BLAZO X 46...</span>
-                </a>
-                <div className="prod-price mb-16">From <span style={{fontSize: 12}}>₹</span> 36.19 Lakh* </div>
-                <a href="https://motorfloor.com/trucks/details/mahindra/blazo-x-46-bs6-tractor">
-                  <button type="button" className="get-quote-button">View Details</button>
-                </a>
-              </div>
-            </div>
-            <div className="col-md-3 col-custom">
-              <figure className="product-img mb-16">
-                <a href="https://motorfloor.com/trucks/details/tata/signa-5525s" className="lazy-container ratio ratio-2-3 bg-transparent">
-                  <img className="lazyload rounded-image" data-src="https://motorfloor.com/assets/admin/img/truck/tata-signa-5525s.jpg" alt="Tata Signa 5525.S" />
-                </a>
-              </figure>
-              <div className="product-details">
-                <a href="https://motorfloor.com/trucks/details/tata/signa-5525s" title="Tata Signa 5525.S">
-                  <span className="product-category">Tata Signa 5525.S</span>
-                </a>
-                <div className="prod-price mb-16">From <span style={{fontSize: 12}}>₹</span> 36.75 Lakh* </div>
-                <a href="https://motorfloor.com/trucks/details/tata/signa-5525s">
-                  <button type="button" className="get-quote-button">View Details</button>
-                </a>
-              </div>
-            </div>
-            <div className="col-md-3 col-custom">
-              <figure className="product-img mb-16">
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/5225-4x2-tractor" className="lazy-container ratio ratio-2-3 bg-transparent">
-                  <img className="lazyload rounded-image" data-src="https://motorfloor.com/assets/admin/img/truck/ashok-leyland-5225-4x2-tractor.jpg" alt="Ashok Leyland 5225 -4x2 Tractor" />
-                </a>
-              </figure>
-              <div className="product-details">
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/5225-4x2-tractor" title="Ashok Leyland 5225 -4x2 Tractor">
-                  <span className="product-category">Ashok Leyland 5225 -...</span>
-                </a>
-                <div className="prod-price mb-16">From <span style={{fontSize: 12}}>₹</span> 39.14 Lakh* </div>
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/5225-4x2-tractor">
-                  <button type="button" className="get-quote-button">View Details</button>
-                </a>
-              </div>
-            </div>
-            <div className="col-md-3 col-custom">
-              <figure className="product-img mb-16">
-                <a href="https://motorfloor.com/trucks/details/bharat-benz/5528tt" className="lazy-container ratio ratio-2-3 bg-transparent">
-                  <img className="lazyload rounded-image" data-src="https://motorfloor.com/assets/admin/img/truck/bharatbenz-5528tt.jpg" alt="BharatBenz 5528TT" />
-                </a>
-              </figure>
-              <div className="product-details">
-                <a href="https://motorfloor.com/trucks/details/bharat-benz/5528tt" title="BharatBenz 5528TT">
-                  <span className="product-category">BharatBenz 5528TT</span>
-                </a>
-                <div className="prod-price mb-16">From <span style={{fontSize: 12}}>₹</span> 44.6 Lakh* </div>
-                <a href="https://motorfloor.com/trucks/details/bharat-benz/5528tt">
-                  <button type="button" className="get-quote-button">View Details</button>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="tab-pane fade" id="truck12" role="tabpanel">
-          <div className="popular-tractor-list">
-            <div className="col-md-3 col-custom">
-              <figure className="product-img mb-16">
-                <a href="https://motorfloor.com/trucks/details/eicher/pro-2059-cng" className="lazy-container ratio ratio-2-3 bg-transparent">
-                  <img className="lazyload rounded-image" data-src="https://motorfloor.com/assets/admin/img/truck/eicher-pro-2059-cng.jpg" alt="Eicher Pro 2059 CNG" />
-                </a>
-              </figure>
-              <div className="product-details">
-                <a href="https://motorfloor.com/trucks/details/eicher/pro-2059-cng" title="Eicher Pro 2059 CNG">
-                  <span className="product-category">Eicher Pro 2059 CNG</span>
-                </a>
-                <div className="prod-price mb-16">From <span style={{fontSize: 12}}>₹</span> 15.77 Lakh* </div>
-                <a href="https://motorfloor.com/trucks/details/eicher/pro-2059-cng">
-                  <button type="button" className="get-quote-button">View Details</button>
-                </a>
-              </div>
-            </div>
-            <div className="col-md-3 col-custom">
-              <figure className="product-img mb-16">
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/dost-cng" className="lazy-container ratio ratio-2-3 bg-transparent">
-                  <img className="lazyload rounded-image" data-src="https://motorfloor.com/assets/admin/img/truck/ashok-leyland-dost-cng.jpg" alt="Ashok Leyland Dost CNG" />
-                </a>
-              </figure>
-              <div className="product-details">
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/dost-cng" title="Ashok Leyland Dost CNG">
-                  <span className="product-category">Ashok Leyland Dost C...</span>
-                </a>
-                <div className="prod-price mb-16">From <span style={{fontSize: 12}}>₹</span> 7.79 Lakh* </div>
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/dost-cng">
-                  <button type="button" className="get-quote-button">View Details</button>
-                </a>
-              </div>
-            </div>
-            <div className="col-md-3 col-custom">
-              <figure className="product-img mb-16">
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/ecomet-1415-he-cng" className="lazy-container ratio ratio-2-3 bg-transparent">
-                  <img className="lazyload rounded-image" data-src="https://motorfloor.com/assets/admin/img/truck/ashok-leyland-ecomet-1415-he-cng.jpg" alt="Ashok Leyland Ecomet 1415 HE CNG" />
-                </a>
-              </figure>
-              <div className="product-details">
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/ecomet-1415-he-cng" title="Ashok Leyland Ecomet 1415 HE CNG">
-                  <span className="product-category">Ashok Leyland Ecomet...</span>
-                </a>
-                <div className="prod-price mb-16">From <span style={{fontSize: 12}}>₹</span> 25.22 Lakh* </div>
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/ecomet-1415-he-cng">
-                  <button type="button" className="get-quote-button">View Details</button>
-                </a>
-              </div>
-            </div>
-            <div className="col-md-3 col-custom">
-              <figure className="product-img mb-16">
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/ecomet-1615-he-cng" className="lazy-container ratio ratio-2-3 bg-transparent">
-                  <img className="lazyload rounded-image" data-src="https://motorfloor.com/assets/admin/img/truck/ashok-leyland-ecomet-1615-he-cng.jpg" alt="Ashok Leyland Ecomet 1615 HE CNG" />
-                </a>
-              </figure>
-              <div className="product-details">
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/ecomet-1615-he-cng" title="Ashok Leyland Ecomet 1615 HE CNG">
-                  <span className="product-category">Ashok Leyland Ecomet...</span>
-                </a>
-                <div className="prod-price mb-16">From <span style={{fontSize: 12}}>₹</span> 25 Lakh* </div>
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/ecomet-1615-he-cng">
-                  <button type="button" className="get-quote-button">View Details</button>
-                </a>
-              </div>
-            </div>
-            <div className="col-md-3 col-custom">
-              <figure className="product-img mb-16">
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/ecomet-star-1115-cng" className="lazy-container ratio ratio-2-3 bg-transparent">
-                  <img className="lazyload rounded-image" data-src="https://motorfloor.com/assets/admin/img/truck/ashok-leyland-ecomet-star-1115-cng.jpg" alt="Ashok Leyland Ecomet STAR 1115 CNG" />
-                </a>
-              </figure>
-              <div className="product-details">
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/ecomet-star-1115-cng" title="Ashok Leyland Ecomet STAR 1115 CNG">
-                  <span className="product-category">Ashok Leyland Ecomet...</span>
-                </a>
-                <div className="prod-price mb-16">From <span style={{fontSize: 12}}>₹</span> 20 Lakh* </div>
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/ecomet-star-1115-cng">
-                  <button type="button" className="get-quote-button">View Details</button>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="tab-pane fade" id="truck13" role="tabpanel">
-          <div className="popular-tractor-list">
-            <div className="col-md-3 col-custom">
-              <figure className="product-img mb-16">
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/boss-1115-tipper" className="lazy-container ratio ratio-2-3 bg-transparent">
-                  <img className="lazyload rounded-image" data-src="https://motorfloor.com/assets/admin/img/truck/ashok-leyland-boss-1115-tipper.jpg" alt="Ashok Leyland BOSS 1115 Tipper" />
-                </a>
-              </figure>
-              <div className="product-details">
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/boss-1115-tipper" title="Ashok Leyland BOSS 1115 Tipper">
-                  <span className="product-category">Ashok Leyland BOSS 1...</span>
-                </a>
-                <div className="prod-price mb-16">From <span style={{fontSize: 12}}>₹</span> 19.11 Lakh* </div>
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/boss-1115-tipper">
-                  <button type="button" className="get-quote-button">View Details</button>
-                </a>
-              </div>
-            </div>
-            <div className="col-md-3 col-custom">
-              <figure className="product-img mb-16">
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/boss-1415-hb" className="lazy-container ratio ratio-2-3 bg-transparent">
-                  <img className="lazyload rounded-image" data-src="https://motorfloor.com/assets/admin/img/truck/ashok-leyland-boss-1415-hb.jpg" alt="Ashok Leyland BOSS 1415 HB" />
-                </a>
-              </figure>
-              <div className="product-details">
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/boss-1415-hb" title="Ashok Leyland BOSS 1415 HB">
-                  <span className="product-category">Ashok Leyland BOSS 1...</span>
-                </a>
-                <div className="prod-price mb-16">From <span style={{fontSize: 12}}>₹</span> 21.19 Lakh* </div>
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/boss-1415-hb">
-                  <button type="button" className="get-quote-button">View Details</button>
-                </a>
-              </div>
-            </div>
-            <div className="col-md-3 col-custom">
-              <figure className="product-img mb-16">
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/dost-strong" className="lazy-container ratio ratio-2-3 bg-transparent">
-                  <img className="lazyload rounded-image" data-src="https://motorfloor.com/assets/admin/img/truck/ashok-leyland-dost-strong.jpg" alt="Ashok Leyland Dost Strong" />
-                </a>
-              </figure>
-              <div className="product-details">
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/dost-strong" title="Ashok Leyland Dost Strong">
-                  <span className="product-category">Ashok Leyland Dost S...</span>
-                </a>
-                <div className="prod-price mb-16">From <span style={{fontSize: 12}}>₹</span> 7.49 Lakh* </div>
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/dost-strong">
-                  <button type="button" className="get-quote-button">View Details</button>
-                </a>
-              </div>
-            </div>
-            <div className="col-md-3 col-custom">
-              <figure className="product-img mb-16">
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/ecomet-1215-tipper" className="lazy-container ratio ratio-2-3 bg-transparent">
-                  <img className="lazyload rounded-image" data-src="https://motorfloor.com/assets/admin/img/truck/ashok-leyland-ecomet-1215-tipper.jpg" alt="Ashok Leyland Ecomet 1215 Tipper" />
-                </a>
-              </figure>
-              <div className="product-details">
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/ecomet-1215-tipper" title="Ashok Leyland Ecomet 1215 Tipper">
-                  <span className="product-category">Ashok Leyland Ecomet...</span>
-                </a>
-                <div className="prod-price mb-16">From <span style={{fontSize: 12}}>₹</span> 20 Lakh* </div>
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/ecomet-1215-tipper">
-                  <button type="button" className="get-quote-button">View Details</button>
-                </a>
-              </div>
-            </div>
-            <div className="col-md-3 col-custom">
-              <figure className="product-img mb-16">
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/ecomet-1415-he" className="lazy-container ratio ratio-2-3 bg-transparent">
-                  <img className="lazyload rounded-image" data-src="https://motorfloor.com/assets/admin/img/truck/ashok-leyland-ecomet-1415-he.jpg" alt="Ashok Leyland Ecomet 1415 HE" />
-                </a>
-              </figure>
-              <div className="product-details">
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/ecomet-1415-he" title="Ashok Leyland Ecomet 1415 HE">
-                  <span className="product-category">Ashok Leyland Ecomet...</span>
-                </a>
-                <div className="prod-price mb-16">From <span style={{fontSize: 12}}>₹</span> 20.48 Lakh* </div>
-                <a href="https://motorfloor.com/trucks/details/ashok-leyland/ecomet-1415-he">
-                  <button type="button" className="get-quote-button">View Details</button>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="tabs-nav-all-vehicles-mweb">
-          <a href="https://motorfloor.com/trucks/new" className="category-url">
-            <div className="product-view-all">
-              <span className="category-name">All New Trucks</span> <img src="https://motorfloor.com/assets/img/icon-right.svg" alt=">" />
-            </div>
-          </a>    
-        </div>
-      </div>
-    </div>
-  </div>
-</section> */}
+
 
 <div>
-      <h4>Best Selling Trucks in India</h4>
+      
       <TruckList trucks={trucks} updateViewAllUrl={updateViewAllUrl} truckData={TruckDataArray} />
 
 </div>
 {/* <VehicleSection vehicleData={TruckDataArray} /> */}
-
-
-
-{/* <div className="container section-brand-list" style={{padding: '0px 16px'}}>
-  <div className="cstm-slider-wrapper-truck">
-    <h2 className="text-start cstm-brand-list-heading">List of Truck Brands in India</h2>
-    <button id="prev-slide-truck" className="cstm-slide-button material-symbols-rounded">    
-      <i className="fa fa-chevron-left" aria-hidden="true" style={{fontSize: 12}} />
-    </button>
-    <ul className="cstm-image-list">
-      <a href="https://motorfloor.com/trucks/ashok-leyland">
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/truck-brands/ashok-leyland.jpg" alt="Ashok Leyland" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">Ashok Leyland</div>
-        </div>
-      </a> 
-      <a href="https://motorfloor.com/trucks/bharat-benz">
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/truck-brands/bharat-benz.jpg" alt="Bharat Benz" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">Bharat Benz</div>
-        </div>
-      </a> 
-      <a href="https://motorfloor.com/trucks/eicher">
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/truck-brands/eicher.jpg" alt="Eicher Motors" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">Eicher Motors</div>
-        </div>
-      </a> 
-      <a href="https://motorfloor.com/trucks/force">
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/truck-brands/force.jpg" alt="Force Motors" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">Force Motors</div>
-        </div>
-      </a> 
-      <a href="https://motorfloor.com/trucks/hino">
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/truck-brands/hino.jpg" alt="Hino Motors" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">Hino Motors</div>
-        </div>
-      </a> 
-      <a href="https://motorfloor.com/trucks/isuzu">
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/truck-brands/isuzu.jpg" alt="Isuzu" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">Isuzu</div>
-        </div>
-      </a> 
-      <a href="https://motorfloor.com/trucks/kamaz">
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/truck-brands/kamaz.jpg" alt="Kamaz" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">Kamaz</div>
-        </div>
-      </a> 
-      <a href="https://motorfloor.com/trucks/mahindra">
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/truck-brands/mahindra.jpg" alt="Mahindra" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">Mahindra</div>
-        </div>
-      </a> 
-      <a href="https://motorfloor.com/trucks/man">
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/truck-brands/man.jpg" alt="MAN" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">MAN</div>
-        </div>
-      </a> 
-      <a href="https://motorfloor.com/trucks/maruti-suzuki">
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/truck-brands/maruti-suzuki.jpg" alt="Maruti Suzuki" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">Maruti Suzuki</div>
-        </div>
-      </a> 
-      <a href="https://motorfloor.com/trucks/olectra">
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/truck-brands/olectra.jpg" alt="Olectra" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">Olectra</div>
-        </div>
-      </a> 
-      <a href="https://motorfloor.com/trucks/omega">
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/truck-brands/omega.jpg" alt="Omega Seiki Mobility" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">Omega Seiki Mobi...</div>
-        </div>
-      </a> 
-      <a href="https://motorfloor.com/trucks/premier">
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/truck-brands/premier.jpg" alt="Premier Motors" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">Premier Motors</div>
-        </div>
-      </a> 
-      <a href="https://motorfloor.com/trucks/scania">
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/truck-brands/scania.jpg" alt="SCANIA" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">SCANIA</div>
-        </div>
-      </a> 
-      <a href="https://motorfloor.com/trucks/sml-isuzu">
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/truck-brands/sml-isuzu.jpg" alt="SML Isuzu" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">SML Isuzu</div>
-        </div>
-      </a> 
-      <a href="https://motorfloor.com/trucks/swaraj-mazda">
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/truck-brands/swaraj-mazda.jpg" alt="Swaraj Mazda" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">Swaraj Mazda</div>
-        </div>
-      </a> 
-      <a href="https://motorfloor.com/trucks/tata">
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/truck-brands/tata.jpg" alt="TATA" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">TATA</div>
-        </div>
-      </a> 
-      <a href="https://motorfloor.com/trucks/volvo">
-        <div className="border rounded-3" style={{width: 150, textAlign: 'center'}}>
-          <div className="p-3">
-            <img src="https://motorfloor.com/assets/img/hero/truck-brands/volvo.jpg" alt="VOLVO" className="rounded mx-auto d-block" />
-          </div>              
-          <hr style={{margin: 0, color: '#DEE1E6'}} />
-          <div className="p-2 cstm-new-brand-text">VOLVO</div>
-        </div>
-      </a> 
-    </ul>
-    <button id="next-slide-truck" className="cstm-slide-button material-symbols-rounded">          
-      <i className="fa fa-chevron-right" aria-hidden="true" style={{fontSize: 12}} />
-    </button>
-  </div>
-  <div className="cstm-slider-scrollbar" style={{display: 'none'}}>
-    <div className="cstm-scrollbar-track">
-      <div className="cstm-scrollbar-thumb" />
-    </div>
-  </div>
-</div> */}
 
 <div className="container section-brand-list" style={{ padding: '0px 16px' }}>
       <div className="cstm-slider-wrapper-truck">
@@ -8030,8 +7657,70 @@ export default function Motorfloor() {
         </div>
       </div>
     </div>
+      
+    <div className="section-divider"></div>
 
-    <VehicleSection vehicleData={BusDataArray} />
+    <div className="App">
+      {/* Render the BusList component */}
+      <BusList buses={buses} updateViewAllUrl={updateViewAllUrl} busData={BusDataArray} />
+    </div>
+
+    <div className="container section-brand-list" style={{ padding: '0px 16px' }}>
+      <div className="cstm-slider-wrapper-truck">
+        <h2 className="text-start cstm-brand-list-heading">List of Bus Brands in India</h2>
+        <button id="prev-slide-truck" className="cstm-slide-button material-symbols-rounded">
+          <i className="fa fa-chevron-left" aria-hidden="true" style={{ fontSize: 12 }} />
+        </button>
+        <ul className="cstm-image-list">
+          {busBrands.map((brand, index) => (
+            <li key={index}>
+              <BrandCard brandName={brand.name} imageUrl={brand.imageUrl} link={brand.link} />
+            </li>
+          ))}
+        </ul>
+        <button id="next-slide-truck" className="cstm-slide-button material-symbols-rounded">
+          <i className="fa fa-chevron-right" aria-hidden="true" style={{ fontSize: 12 }} />
+        </button>
+      </div>
+      <div className="cstm-slider-scrollbar" style={{ display: 'none' }}>
+        <div className="cstm-scrollbar-track">
+          <div className="cstm-scrollbar-thumb" />
+        </div>
+      </div>
+    </div>
+    <div className="section-divider"></div>
+
+    <div className="App">
+      {/* Render the AutoList component */}
+      <AutoList autos={autos} updateViewAllUrl={updateViewAllUrl} autoData={AutoDataArray} />
+    </div>
+
+    {/* <div className="container section-brand-list" style={{ padding: '0px 16px' }}>
+      <div className="cstm-slider-wrapper-truck">
+        <h2 className="text-start cstm-brand-list-heading">List of Auto Brands in India</h2>
+        <button id="prev-slide-truck" className="cstm-slide-button material-symbols-rounded">
+          <i className="fa fa-chevron-left" aria-hidden="true" style={{ fontSize: 12 }} />
+        </button>
+        <ul className="cstm-image-list">
+
+          {autoBrands.map((brand, index) => (
+            <li key={index}>
+              <BrandCard brandName={brand.name} imageUrl={brand.imageUrl} link={brand.link} />
+            </li>
+          ))}
+        </ul>
+        <button id="next-slide-truck" className="cstm-slide-button material-symbols-rounded">
+          <i className="fa fa-chevron-right" aria-hidden="true" style={{ fontSize: 12 }} />
+        </button>
+      </div>
+      <div className="cstm-slider-scrollbar" style={{ display: 'none' }}>
+        <div className="cstm-scrollbar-track">
+          <div className="cstm-scrollbar-thumb" />
+        </div>
+      </div>
+    </div> */}
+
+
 
 
 
